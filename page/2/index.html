@@ -842,318 +842,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/2018-11-11-zookeeper安装/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Aaryn">
-      <meta itemprop="description" content="Trust Commitment Care">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GeekerHub">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/11/11/2018-11-11-zookeeper安装/" class="post-title-link" itemprop="url">zookeeper安装</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-11 18:18:09" itemprop="dateCreated datePublished" datetime="2018-11-11T18:18:09+08:00">2018-11-11</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">2.3k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">2 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="zookeeper安装"><a href="#zookeeper安装" class="headerlink" title="zookeeper安装"></a>zookeeper安装</h1><h3 id="单机服务安装"><a href="#单机服务安装" class="headerlink" title="单机服务安装"></a>单机服务安装</h3><h4 id="1-下载zookeeper-3-4-13"><a href="#1-下载zookeeper-3-4-13" class="headerlink" title="1.下载zookeeper(3.4.13)"></a>1.下载zookeeper(3.4.13)</h4><ul>
-<li><a href="http://mirrors.shu.edu.cn/apache/zookeeper/zookeeper-3.4.13/" target="_blank" rel="noopener">官方链接</a></li>
-<li><a href="https://pan.baidu.com/s/1gNCaBT_E71u_nE_mAEkScQ" target="_blank" rel="noopener">网盘下载</a><h4 id="2-上传至服务器并解压文件"><a href="#2-上传至服务器并解压文件" class="headerlink" title="2.上传至服务器并解压文件"></a>2.上传至服务器并解压文件</h4></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf zookeeper-3.4.13.tar.gz</span><br></pre></td></tr></table></figure>
-<h4 id="3-cd-至zookeeper目录下创建data、logs目录"><a href="#3-cd-至zookeeper目录下创建data、logs目录" class="headerlink" title="3.cd 至zookeeper目录下创建data、logs目录"></a>3.cd 至zookeeper目录下创建data、logs目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd zookeeper-3.4.13</span><br><span class="line">mkdir data</span><br><span class="line">mkdir logs</span><br></pre></td></tr></table></figure>
-<h4 id="4-创建cfg文件"><a href="#4-创建cfg文件" class="headerlink" title="4.创建cfg文件"></a>4.创建cfg文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 创建zoo.cfg</span><br><span class="line">vim zoo.cfg</span><br><span class="line">2. 进行单机版配置</span><br><span class="line">tickTime=2000</span><br><span class="line">dataDir=/usr/local/zookeeper/zookeeper-3.4.13/data</span><br><span class="line">dataLogDir=/usr/local/zookeeper/zookeeper-3.4.13/logs</span><br><span class="line">clientPort=2181</span><br></pre></td></tr></table></figure>
-<h4 id="5-启动命令"><a href="#5-启动命令" class="headerlink" title="5.启动命令"></a>5.启动命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.切换至bin目录下</span><br><span class="line">2.使用./zkServer.sh进行相关操作</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>./zkServer.sh start</td>
-<td>启动</td>
-</tr>
-<tr>
-<td>./zkServer.sh stop</td>
-<td>停止</td>
-</tr>
-<tr>
-<td>./zkServer.sh restart</td>
-<td>重启</td>
-</tr>
-<tr>
-<td>./zkServer.sh status</td>
-<td>查看状态</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h3 id="伪集群安装"><a href="#伪集群安装" class="headerlink" title="伪集群安装"></a>伪集群安装</h3><h4 id="1-重命名文件夹"><a href="#1-重命名文件夹" class="headerlink" title="1.重命名文件夹"></a>1.重命名文件夹</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv zookeeper3.4.13 zookeeper1</span><br></pre></td></tr></table></figure>
-<h4 id="2-修改zoo-cfg文件"><a href="#2-修改zoo-cfg文件" class="headerlink" title="2.修改zoo.cfg文件"></a>2.修改zoo.cfg文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dataDir=/usr/local/zookeeper/zookeeper1/data</span><br><span class="line">dataLogDir=/usr/local/zookeeper/zookeeper1/logs</span><br><span class="line">clientPort=2181</span><br><span class="line">initLimit=5</span><br><span class="line">syncLimit=2</span><br><span class="line">server.1=127.0.0.1:2888:3888</span><br><span class="line">server.2=127.0.0.1:4888:5888</span><br><span class="line">server.3=127.0.0.1:6888:7888</span><br></pre></td></tr></table></figure>
-<h4 id="3-创建myid文件"><a href="#3-创建myid文件" class="headerlink" title="3.创建myid文件"></a>3.创建myid文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 定位至zoo.cfg设置的dataDir文件夹下：</span><br><span class="line">cd data/</span><br><span class="line">2. 创建myid文件</span><br><span class="line">vim myid</span><br><span class="line">输入 1 (这里一定要与zoo.cfg中的server名后的数字保持一致)</span><br></pre></td></tr></table></figure>
-<h4 id="4-复制并修改相关配置文件"><a href="#4-复制并修改相关配置文件" class="headerlink" title="4.复制并修改相关配置文件"></a>4.复制并修改相关配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 复制文件夹</span><br><span class="line">cp -r zookeeper1 zookeeper2</span><br><span class="line">cp -r zookeeper1 zookeeper3</span><br><span class="line">2. 修改关键内容，data目录下的myid文件，修改为服务后的数字</span><br></pre></td></tr></table></figure>
-<h3 id="集群安装"><a href="#集群安装" class="headerlink" title="集群安装"></a>集群安装</h3><h4 id="1-上传zookeeper文件到三台虚拟机中并进行解压"><a href="#1-上传zookeeper文件到三台虚拟机中并进行解压" class="headerlink" title="1. 上传zookeeper文件到三台虚拟机中并进行解压"></a>1. 上传zookeeper文件到三台虚拟机中并进行解压</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf zookeeper-3.4.13.tar.gz</span><br></pre></td></tr></table></figure>
-<h4 id="2-在解压的zookeeper文件夹下创建data，logs两个目录；"><a href="#2-在解压的zookeeper文件夹下创建data，logs两个目录；" class="headerlink" title="2.在解压的zookeeper文件夹下创建data，logs两个目录；"></a>2.在解压的zookeeper文件夹下创建data，logs两个目录；</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir data logs</span><br></pre></td></tr></table></figure>
-<h4 id="3-在conf文件夹下创建zoo-cfg文件"><a href="#3-在conf文件夹下创建zoo-cfg文件" class="headerlink" title="3.在conf文件夹下创建zoo.cfg文件"></a>3.在conf文件夹下创建zoo.cfg文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd conf/</span><br><span class="line">vim zoo.cfg</span><br></pre></td></tr></table></figure>
-<h4 id="4-在zoo-cfg中输入内容"><a href="#4-在zoo-cfg中输入内容" class="headerlink" title="4. 在zoo.cfg中输入内容"></a>4. 在zoo.cfg中输入内容</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dataDir=/usr/local/zookeeper/zookeeper3.4.13/data</span><br><span class="line">dataLogDir=/usr/local/zookeeper/zookeeper3.4.13/logs</span><br><span class="line">clientPort=2181</span><br><span class="line">initLimit=5</span><br><span class="line">syncLimit=2</span><br><span class="line">server.1=192.168.1.4:2888:3888</span><br><span class="line">server.2=192.168.1.5:2888:3888</span><br><span class="line">server.3=192.168.1.6:2888:3888</span><br></pre></td></tr></table></figure>
-<h4 id="5-在data目录下创建myid文件，文件内容为server后的数字，例如192-168-1-4的zoo-cfg中server后的数字为1，则在4的机器data目录下创建myid文件，文件内容输入数字1即可"><a href="#5-在data目录下创建myid文件，文件内容为server后的数字，例如192-168-1-4的zoo-cfg中server后的数字为1，则在4的机器data目录下创建myid文件，文件内容输入数字1即可" class="headerlink" title="5. 在data目录下创建myid文件，文件内容为server后的数字，例如192.168.1.4的zoo.cfg中server后的数字为1，则在4的机器data目录下创建myid文件，文件内容输入数字1即可"></a>5. 在data目录下创建myid文件，文件内容为server后的数字，例如192.168.1.4的zoo.cfg中server后的数字为1，则在4的机器data目录下创建myid文件，文件内容输入数字1即可</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd data/</span><br><span class="line">vim myid</span><br></pre></td></tr></table></figure>
-<h4 id="6-检查每台机器的防火墙的状态，我这里是虚拟机为了方便操作，我直接将防火墙关闭了，生产环境请放行端口进行操作"><a href="#6-检查每台机器的防火墙的状态，我这里是虚拟机为了方便操作，我直接将防火墙关闭了，生产环境请放行端口进行操作" class="headerlink" title="6.检查每台机器的防火墙的状态，我这里是虚拟机为了方便操作，我直接将防火墙关闭了，生产环境请放行端口进行操作"></a>6.检查每台机器的防火墙的状态，我这里是虚拟机为了方便操作，我直接将防火墙关闭了，生产环境请放行端口进行操作</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 查看防火墙状态</span><br><span class="line">systemctl status firewalld</span><br><span class="line">2. 关闭防火墙</span><br><span class="line">systemctl stop firewalld</span><br><span class="line">3. 禁止防火墙开机启动</span><br><span class="line">systemctl disable firewalld</span><br></pre></td></tr></table></figure>
-<h4 id="7-启动每台机器的实例并查看状态"><a href="#7-启动每台机器的实例并查看状态" class="headerlink" title="7.启动每台机器的实例并查看状态"></a>7.启动每台机器的实例并查看状态</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 启动zookeeper服务</span><br><span class="line">./zkServer.sh start </span><br><span class="line">2. 查看每台机器的服务状态</span><br><span class="line">./zkServer.sh status</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="zookeeper目录及命令介绍"><a href="#zookeeper目录及命令介绍" class="headerlink" title="zookeeper目录及命令介绍"></a>zookeeper目录及命令介绍</h3><h5 id="zookeeper主要目录结构"><a href="#zookeeper主要目录结构" class="headerlink" title="zookeeper主要目录结构"></a>zookeeper主要目录结构</h5><table>
-<thead>
-<tr>
-<th>目录</th>
-<th>用途</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>bin</td>
-<td>主要的运行命令</td>
-</tr>
-<tr>
-<td>conf</td>
-<td>配置文件</td>
-</tr>
-<tr>
-<td>contrib</td>
-<td>附加功能</td>
-</tr>
-<tr>
-<td>dist-maven</td>
-<td>mvn编译后的目录</td>
-</tr>
-<tr>
-<td>docs</td>
-<td>文档</td>
-</tr>
-<tr>
-<td>lib</td>
-<td>依赖JAR包</td>
-</tr>
-<tr>
-<td>recipes</td>
-<td>案列demo</td>
-</tr>
-<tr>
-<td>src</td>
-<td>源码</td>
-</tr>
-</tbody>
-</table>
-<h5 id="zoo-cfg配置"><a href="#zoo-cfg配置" class="headerlink" title="zoo.cfg配置"></a>zoo.cfg配置</h5><table>
-<thead>
-<tr>
-<th>配置项</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>tickTime</td>
-<td>计算的时间单元</td>
-</tr>
-<tr>
-<td>initTime</td>
-<td>允许从节点连接并同步到主节点的初始化连接时间，以tickTime的倍数来表示，用于集群</td>
-</tr>
-<tr>
-<td>syncLimit</td>
-<td>master主节点与从节点之间发送消息请求和应答的时间长度（心跳机制）</td>
-</tr>
-<tr>
-<td>dataDir</td>
-<td>数据目录</td>
-</tr>
-<tr>
-<td>dataLogDir</td>
-<td>日志目录，不建议使用/tmp临时目录</td>
-</tr>
-<tr>
-<td>clientPort</td>
-<td>连接端口</td>
-</tr>
-</tbody>
-</table>
-<p>eg:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tickTime=2000</span><br><span class="line">dataDir=/usr/local/zookeeper/zookeeper1/data</span><br><span class="line">dataLogDir=/usr/local/zookeeper/zookeeper1/logs</span><br><span class="line">clientPort=2181</span><br><span class="line">initLimit=5</span><br><span class="line">syncLimit=2</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/2018-11-11-zookeeper客户端操作以及ACL权限控制/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1562,6 +1250,318 @@
 </blockquote>
 </li>
 </ul>
+
+          
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/2018-11-11-zookeeper安装/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aaryn">
+      <meta itemprop="description" content="Trust Commitment Care">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GeekerHub">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/11/11/2018-11-11-zookeeper安装/" class="post-title-link" itemprop="url">zookeeper安装</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-11 18:18:09" itemprop="dateCreated datePublished" datetime="2018-11-11T18:18:09+08:00">2018-11-11</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2.3k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">2 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="zookeeper安装"><a href="#zookeeper安装" class="headerlink" title="zookeeper安装"></a>zookeeper安装</h1><h3 id="单机服务安装"><a href="#单机服务安装" class="headerlink" title="单机服务安装"></a>单机服务安装</h3><h4 id="1-下载zookeeper-3-4-13"><a href="#1-下载zookeeper-3-4-13" class="headerlink" title="1.下载zookeeper(3.4.13)"></a>1.下载zookeeper(3.4.13)</h4><ul>
+<li><a href="http://mirrors.shu.edu.cn/apache/zookeeper/zookeeper-3.4.13/" target="_blank" rel="noopener">官方链接</a></li>
+<li><a href="https://pan.baidu.com/s/1gNCaBT_E71u_nE_mAEkScQ" target="_blank" rel="noopener">网盘下载</a><h4 id="2-上传至服务器并解压文件"><a href="#2-上传至服务器并解压文件" class="headerlink" title="2.上传至服务器并解压文件"></a>2.上传至服务器并解压文件</h4></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf zookeeper-3.4.13.tar.gz</span><br></pre></td></tr></table></figure>
+<h4 id="3-cd-至zookeeper目录下创建data、logs目录"><a href="#3-cd-至zookeeper目录下创建data、logs目录" class="headerlink" title="3.cd 至zookeeper目录下创建data、logs目录"></a>3.cd 至zookeeper目录下创建data、logs目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd zookeeper-3.4.13</span><br><span class="line">mkdir data</span><br><span class="line">mkdir logs</span><br></pre></td></tr></table></figure>
+<h4 id="4-创建cfg文件"><a href="#4-创建cfg文件" class="headerlink" title="4.创建cfg文件"></a>4.创建cfg文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 创建zoo.cfg</span><br><span class="line">vim zoo.cfg</span><br><span class="line">2. 进行单机版配置</span><br><span class="line">tickTime=2000</span><br><span class="line">dataDir=/usr/local/zookeeper/zookeeper-3.4.13/data</span><br><span class="line">dataLogDir=/usr/local/zookeeper/zookeeper-3.4.13/logs</span><br><span class="line">clientPort=2181</span><br></pre></td></tr></table></figure>
+<h4 id="5-启动命令"><a href="#5-启动命令" class="headerlink" title="5.启动命令"></a>5.启动命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.切换至bin目录下</span><br><span class="line">2.使用./zkServer.sh进行相关操作</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./zkServer.sh start</td>
+<td>启动</td>
+</tr>
+<tr>
+<td>./zkServer.sh stop</td>
+<td>停止</td>
+</tr>
+<tr>
+<td>./zkServer.sh restart</td>
+<td>重启</td>
+</tr>
+<tr>
+<td>./zkServer.sh status</td>
+<td>查看状态</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="伪集群安装"><a href="#伪集群安装" class="headerlink" title="伪集群安装"></a>伪集群安装</h3><h4 id="1-重命名文件夹"><a href="#1-重命名文件夹" class="headerlink" title="1.重命名文件夹"></a>1.重命名文件夹</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv zookeeper3.4.13 zookeeper1</span><br></pre></td></tr></table></figure>
+<h4 id="2-修改zoo-cfg文件"><a href="#2-修改zoo-cfg文件" class="headerlink" title="2.修改zoo.cfg文件"></a>2.修改zoo.cfg文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dataDir=/usr/local/zookeeper/zookeeper1/data</span><br><span class="line">dataLogDir=/usr/local/zookeeper/zookeeper1/logs</span><br><span class="line">clientPort=2181</span><br><span class="line">initLimit=5</span><br><span class="line">syncLimit=2</span><br><span class="line">server.1=127.0.0.1:2888:3888</span><br><span class="line">server.2=127.0.0.1:4888:5888</span><br><span class="line">server.3=127.0.0.1:6888:7888</span><br></pre></td></tr></table></figure>
+<h4 id="3-创建myid文件"><a href="#3-创建myid文件" class="headerlink" title="3.创建myid文件"></a>3.创建myid文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 定位至zoo.cfg设置的dataDir文件夹下：</span><br><span class="line">cd data/</span><br><span class="line">2. 创建myid文件</span><br><span class="line">vim myid</span><br><span class="line">输入 1 (这里一定要与zoo.cfg中的server名后的数字保持一致)</span><br></pre></td></tr></table></figure>
+<h4 id="4-复制并修改相关配置文件"><a href="#4-复制并修改相关配置文件" class="headerlink" title="4.复制并修改相关配置文件"></a>4.复制并修改相关配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 复制文件夹</span><br><span class="line">cp -r zookeeper1 zookeeper2</span><br><span class="line">cp -r zookeeper1 zookeeper3</span><br><span class="line">2. 修改关键内容，data目录下的myid文件，修改为服务后的数字</span><br></pre></td></tr></table></figure>
+<h3 id="集群安装"><a href="#集群安装" class="headerlink" title="集群安装"></a>集群安装</h3><h4 id="1-上传zookeeper文件到三台虚拟机中并进行解压"><a href="#1-上传zookeeper文件到三台虚拟机中并进行解压" class="headerlink" title="1. 上传zookeeper文件到三台虚拟机中并进行解压"></a>1. 上传zookeeper文件到三台虚拟机中并进行解压</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf zookeeper-3.4.13.tar.gz</span><br></pre></td></tr></table></figure>
+<h4 id="2-在解压的zookeeper文件夹下创建data，logs两个目录；"><a href="#2-在解压的zookeeper文件夹下创建data，logs两个目录；" class="headerlink" title="2.在解压的zookeeper文件夹下创建data，logs两个目录；"></a>2.在解压的zookeeper文件夹下创建data，logs两个目录；</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir data logs</span><br></pre></td></tr></table></figure>
+<h4 id="3-在conf文件夹下创建zoo-cfg文件"><a href="#3-在conf文件夹下创建zoo-cfg文件" class="headerlink" title="3.在conf文件夹下创建zoo.cfg文件"></a>3.在conf文件夹下创建zoo.cfg文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd conf/</span><br><span class="line">vim zoo.cfg</span><br></pre></td></tr></table></figure>
+<h4 id="4-在zoo-cfg中输入内容"><a href="#4-在zoo-cfg中输入内容" class="headerlink" title="4. 在zoo.cfg中输入内容"></a>4. 在zoo.cfg中输入内容</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dataDir=/usr/local/zookeeper/zookeeper3.4.13/data</span><br><span class="line">dataLogDir=/usr/local/zookeeper/zookeeper3.4.13/logs</span><br><span class="line">clientPort=2181</span><br><span class="line">initLimit=5</span><br><span class="line">syncLimit=2</span><br><span class="line">server.1=192.168.1.4:2888:3888</span><br><span class="line">server.2=192.168.1.5:2888:3888</span><br><span class="line">server.3=192.168.1.6:2888:3888</span><br></pre></td></tr></table></figure>
+<h4 id="5-在data目录下创建myid文件，文件内容为server后的数字，例如192-168-1-4的zoo-cfg中server后的数字为1，则在4的机器data目录下创建myid文件，文件内容输入数字1即可"><a href="#5-在data目录下创建myid文件，文件内容为server后的数字，例如192-168-1-4的zoo-cfg中server后的数字为1，则在4的机器data目录下创建myid文件，文件内容输入数字1即可" class="headerlink" title="5. 在data目录下创建myid文件，文件内容为server后的数字，例如192.168.1.4的zoo.cfg中server后的数字为1，则在4的机器data目录下创建myid文件，文件内容输入数字1即可"></a>5. 在data目录下创建myid文件，文件内容为server后的数字，例如192.168.1.4的zoo.cfg中server后的数字为1，则在4的机器data目录下创建myid文件，文件内容输入数字1即可</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd data/</span><br><span class="line">vim myid</span><br></pre></td></tr></table></figure>
+<h4 id="6-检查每台机器的防火墙的状态，我这里是虚拟机为了方便操作，我直接将防火墙关闭了，生产环境请放行端口进行操作"><a href="#6-检查每台机器的防火墙的状态，我这里是虚拟机为了方便操作，我直接将防火墙关闭了，生产环境请放行端口进行操作" class="headerlink" title="6.检查每台机器的防火墙的状态，我这里是虚拟机为了方便操作，我直接将防火墙关闭了，生产环境请放行端口进行操作"></a>6.检查每台机器的防火墙的状态，我这里是虚拟机为了方便操作，我直接将防火墙关闭了，生产环境请放行端口进行操作</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 查看防火墙状态</span><br><span class="line">systemctl status firewalld</span><br><span class="line">2. 关闭防火墙</span><br><span class="line">systemctl stop firewalld</span><br><span class="line">3. 禁止防火墙开机启动</span><br><span class="line">systemctl disable firewalld</span><br></pre></td></tr></table></figure>
+<h4 id="7-启动每台机器的实例并查看状态"><a href="#7-启动每台机器的实例并查看状态" class="headerlink" title="7.启动每台机器的实例并查看状态"></a>7.启动每台机器的实例并查看状态</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 启动zookeeper服务</span><br><span class="line">./zkServer.sh start </span><br><span class="line">2. 查看每台机器的服务状态</span><br><span class="line">./zkServer.sh status</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="zookeeper目录及命令介绍"><a href="#zookeeper目录及命令介绍" class="headerlink" title="zookeeper目录及命令介绍"></a>zookeeper目录及命令介绍</h3><h5 id="zookeeper主要目录结构"><a href="#zookeeper主要目录结构" class="headerlink" title="zookeeper主要目录结构"></a>zookeeper主要目录结构</h5><table>
+<thead>
+<tr>
+<th>目录</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bin</td>
+<td>主要的运行命令</td>
+</tr>
+<tr>
+<td>conf</td>
+<td>配置文件</td>
+</tr>
+<tr>
+<td>contrib</td>
+<td>附加功能</td>
+</tr>
+<tr>
+<td>dist-maven</td>
+<td>mvn编译后的目录</td>
+</tr>
+<tr>
+<td>docs</td>
+<td>文档</td>
+</tr>
+<tr>
+<td>lib</td>
+<td>依赖JAR包</td>
+</tr>
+<tr>
+<td>recipes</td>
+<td>案列demo</td>
+</tr>
+<tr>
+<td>src</td>
+<td>源码</td>
+</tr>
+</tbody>
+</table>
+<h5 id="zoo-cfg配置"><a href="#zoo-cfg配置" class="headerlink" title="zoo.cfg配置"></a>zoo.cfg配置</h5><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tickTime</td>
+<td>计算的时间单元</td>
+</tr>
+<tr>
+<td>initTime</td>
+<td>允许从节点连接并同步到主节点的初始化连接时间，以tickTime的倍数来表示，用于集群</td>
+</tr>
+<tr>
+<td>syncLimit</td>
+<td>master主节点与从节点之间发送消息请求和应答的时间长度（心跳机制）</td>
+</tr>
+<tr>
+<td>dataDir</td>
+<td>数据目录</td>
+</tr>
+<tr>
+<td>dataLogDir</td>
+<td>日志目录，不建议使用/tmp临时目录</td>
+</tr>
+<tr>
+<td>clientPort</td>
+<td>连接端口</td>
+</tr>
+</tbody>
+</table>
+<p>eg:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tickTime=2000</span><br><span class="line">dataDir=/usr/local/zookeeper/zookeeper1/data</span><br><span class="line">dataLogDir=/usr/local/zookeeper/zookeeper1/logs</span><br><span class="line">clientPort=2181</span><br><span class="line">initLimit=5</span><br><span class="line">syncLimit=2</span><br></pre></td></tr></table></figure>
 
           
         
