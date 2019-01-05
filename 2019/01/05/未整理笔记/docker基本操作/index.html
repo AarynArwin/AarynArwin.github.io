@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="微信分享微信验证签名地址（https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign）">
+  <meta name="description" content="1.启动docker的交互式容器 1docker run -i -t IMAGE /bin/bash 自定义容器名 1docker run --name=自定义容器名 -i -t IMAGE /bin/bash 在容器中运行命令 1docker run IMAGE 2.查看运行过的所有容器列表 1docker ps -a 3.查看某一容器的详细信息 1docker inspect 容器名或者唯一I">
 <meta name="keywords" content="IT Java Basketball">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GeekerHub">
-<meta property="og:url" content="http://yoursite.com/2019/01/05/微信分享相关/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/01/05/未整理笔记/docker基本操作/index.html">
 <meta property="og:site_name" content="GeekerHub">
-<meta property="og:description" content="微信分享微信验证签名地址（https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign）">
+<meta property="og:description" content="1.启动docker的交互式容器 1docker run -i -t IMAGE /bin/bash 自定义容器名 1docker run --name=自定义容器名 -i -t IMAGE /bin/bash 在容器中运行命令 1docker run IMAGE 2.查看运行过的所有容器列表 1docker ps -a 3.查看某一容器的详细信息 1docker inspect 容器名或者唯一I">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-06T13:23:40.894Z">
+<meta property="og:updated_time" content="2018-11-25T14:40:51.682Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GeekerHub">
-<meta name="twitter:description" content="微信分享微信验证签名地址（https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign）">
+<meta name="twitter:description" content="1.启动docker的交互式容器 1docker run -i -t IMAGE /bin/bash 自定义容器名 1docker run --name=自定义容器名 -i -t IMAGE /bin/bash 在容器中运行命令 1docker run IMAGE 2.查看运行过的所有容器列表 1docker ps -a 3.查看某一容器的详细信息 1docker inspect 容器名或者唯一I">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/05/微信分享相关/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/05/未整理笔记/docker基本操作/">
 
 
 
@@ -302,7 +302,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">18</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">17</span></a>
 
   </li>
 
@@ -383,7 +383,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/05/微信分享相关/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/05/未整理笔记/docker基本操作/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Aaryn">
@@ -454,7 +454,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">72</span>
+                <span title="本文字数">270</span>
               
 
               
@@ -488,7 +488,21 @@
       
 
       
-        <h1 id="微信分享"><a href="#微信分享" class="headerlink" title="微信分享"></a>微信分享</h1><h5 id="微信验证签名地址（https-mp-weixin-qq-com-debug-cgi-bin-sandbox-t-jsapisign）"><a href="#微信验证签名地址（https-mp-weixin-qq-com-debug-cgi-bin-sandbox-t-jsapisign）" class="headerlink" title="微信验证签名地址（https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign）"></a>微信验证签名地址（<a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign）" target="_blank" rel="noopener">https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign）</a></h5>
+        <p>1.启动docker的交互式容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -i -t IMAGE /bin/bash</span><br></pre></td></tr></table></figure>
+<p>自定义容器名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name=自定义容器名 -i -t IMAGE /bin/bash</span><br></pre></td></tr></table></figure>
+<p>在容器中运行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run IMAGE</span><br></pre></td></tr></table></figure>
+<p>2.查看运行过的所有容器列表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+<p>3.查看某一容器的详细信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect 容器名或者唯一ID</span><br></pre></td></tr></table></figure>
+<p>4.重新运行已停止的容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start （-i） 容器名</span><br></pre></td></tr></table></figure>
+<p>5.删除已停止的容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm 容器名或者唯一ID</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -546,7 +560,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/05/nginx配置https/" rel="next" title="">
+              <a href="/2019/01/05/未整理笔记/# springboot集成dubbo/" rel="next" title="">
                 <i class="fa fa-chevron-left"></i> 
               </a>
             
@@ -556,8 +570,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/05/生僻英文记录/" rel="prev" title="Tags Testing Article">
-                Tags Testing Article <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/05/未整理笔记/nginx配置https/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -605,17 +619,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -632,7 +637,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -772,23 +777,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#微信分享"><span class="nav-number">1.</span> <span class="nav-text">微信分享</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#微信验证签名地址（https-mp-weixin-qq-com-debug-cgi-bin-sandbox-t-jsapisign）"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">微信验证签名地址（https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign）</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
