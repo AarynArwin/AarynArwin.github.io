@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Tags Testing Article]]></title>
+    <url>%2F2019%2F01%2F05%2F%E7%94%9F%E5%83%BB%E8%8B%B1%E6%96%87%E8%AE%B0%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[redundant adj. 多余的，过剩的；被解雇的，失业的；冗长的，累赘的 modifier 改性剂；修饰符；修饰语；调节器 modifier “private” is redundant for enum constuctor]]></content>
+      <tags>
+        <tag>Testing</tag>
+        <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2019%2F01%2F05%2F%E5%BE%AE%E4%BF%A1%E5%88%86%E4%BA%AB%E7%9B%B8%E5%85%B3%2F</url>
+    <content type="text"><![CDATA[微信分享微信验证签名地址（https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign）]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2019%2F01%2F05%2Fnginx%E9%85%8D%E7%BD%AEhttps%2F</url>
+    <content type="text"><![CDATA[1.]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2019%2F01%2F05%2Fdocker%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%2F</url>
+    <content type="text"><![CDATA[1.启动docker的交互式容器 1docker run -i -t IMAGE /bin/bash 自定义容器名 1docker run --name=自定义容器名 -i -t IMAGE /bin/bash 在容器中运行命令 1docker run IMAGE 2.查看运行过的所有容器列表 1docker ps -a 3.查看某一容器的详细信息 1docker inspect 容器名或者唯一ID 4.重新运行已停止的容器 1docker start （-i） 容器名 5.删除已停止的容器 1docker rm 容器名或者唯一ID]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2019%2F01%2F05%2F%23%20springboot%E9%9B%86%E6%88%90dubbo%2F</url>
+    <content type="text"><![CDATA[springboot集成dubbo1.项目引入dubbo的maven依赖12345&lt;dependency&gt; &lt;groupId&gt;com.alibaba.spring.boot&lt;/groupId&gt; &lt;artifactId&gt;dubbo-spring-boot-starter&lt;/artifactId&gt; &lt;version&gt;2.0.0&lt;/version&gt;&lt;/dependency&gt; 2.开发dubbo服务接口​ 提供接口以及model类 3. 开发dubbo服务提供者(provider)1. 添加springboot项目的开发相关依赖2. 集成dubbo起步依赖3. 核心配置文件中添加dubbo的相关信息以及zookeeper的相关配置12345678zookeeper客户端依赖 maven &lt;!-- https://mvnrepository.com/artifact/com.101tec/zkclient --&gt;&lt;dependency&gt; &lt;groupId&gt;com.101tec&lt;/groupId&gt; &lt;artifactId&gt;zkclient&lt;/artifactId&gt; &lt;version&gt;0.10&lt;/version&gt;&lt;/dependency&gt; 4. 引入接口项目的依赖进行接口实现，用于提供服务5. 启动类开启dubbo自动配置扫描1使用注解@EnableDubboConfiguration 4. 开发dubbo服务消费者]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2019%2F01%2F05%2Fnetty%E7%9B%B8%E5%85%B3%2Fnetty%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90%2F</url>
+    <content type="text"><![CDATA[1.实例 2.reactor线程模型 3.运行流程 4.读写数据 5.TCP各个参数 6.内存池剖析 7.序列化框架，编码解码器 8.https]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F01%2F04%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Springboot集成七牛云搭建自己的免费图床]]></title>
+    <url>%2F2018%2F12%2F15%2F2018-12-15-%E5%9F%BA%E4%BA%8E%E4%B8%83%E7%89%9B%E4%BA%91%E4%BD%BF%E7%94%A8Springboot%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A%2F</url>
+    <content type="text"><![CDATA[大家在写markdown的时候时常会用到上传图片的问题，本人使用的是七牛云做图片存储，每月的免费存储流量足够个人笔记使用，下边简单总结下我使用springboot基于七牛云搭建自己的免费图床的步骤，只需要修改关键参数即可体验。 项目地址体验流程1.开通自己的七牛云的账号并进行域名配置等操作，具体操作参照七牛云文档2.下载项目到本地修改配置后启动项目查看效果 需修改参数 包路径 参数介绍 AK constants 七牛云AK SK constants 是否 BUCKET constants 空间名称 IMAGE_URL_HTTP_VALUE constants 个人配置的空间域名 IMAGE_URL_HTTP_VALUE_SUFFIX constants 七牛云开启原图保护的间隔符与后缀，非必须 logback.xml 项目根路径下 修改为自己的本地文件夹的路径即可，否则项目启动可能会报错 3.启动项目并访问地址进行上传访问路径：localhost:8888 上传成功后即可获取图片地址，直接复制图片路径访问]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>Springboot</tag>
+        <tag>七牛云</tag>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Springboot集成阿里云短信服务]]></title>
+    <url>%2F2018%2F12%2F13%2F2018-12-13-springboot%E9%9B%86%E6%88%90%E9%98%BF%E9%87%8C%E4%BA%91%E7%9F%AD%E4%BF%A1%E6%9C%8D%E5%8A%A1%2F</url>
+    <content type="text"><![CDATA[Some are born great, some achieve greatness, and some have greatness thrust upon them. 有些人天生不凡，有些人后来获得卓越，还有些人被迫伟大。 开发环境： 工具：idea2018.3 Springboot版本：2.1.1 JDK版本：1.8 构建工具：Maven API展示：Swagger2 简介​ 互联网项目离不开短信服务，无论是日常的登录验证码或者用户相关的操作以及营销活动，都需要为用户发送短信，本项目为最初始版本的springboot集成阿里云短信服务的demo，只需要下载到本地修改响应开发参数后即可运行，项目的局限性以及优化之后会总结并更新。 使用指引1.阿里云短信服务使用指引2.根据指引开通服务后开始编写服务代码3.添加maven依赖1234567891011121314151617181920&lt;!--阿里云短信通知依赖--&gt; &lt;!-- https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-core --&gt; &lt;dependency&gt; &lt;groupId&gt;com.aliyun&lt;/groupId&gt; &lt;artifactId&gt;aliyun-java-sdk-core&lt;/artifactId&gt; &lt;version&gt;3.7.1&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;com.aliyun&lt;/groupId&gt; &lt;artifactId&gt;aliyun-java-sdk-dysmsapi&lt;/artifactId&gt; &lt;version&gt;1.1.0&lt;/version&gt; &lt;/dependency&gt; &lt;!--阿里云短信依赖json--&gt; &lt;!-- https://mvnrepository.com/artifact/org.json/json --&gt; &lt;dependency&gt; &lt;groupId&gt;org.json&lt;/groupId&gt; &lt;artifactId&gt;json&lt;/artifactId&gt; &lt;version&gt;20180130&lt;/version&gt; &lt;/dependency&gt; 4.项目目录结构介绍 5.运行需修改参数 参数 所在目录 介绍 password application-dev/application-online redis连接密码 ACCESSSKEY_ID constants/SmsConstants 阿里云短信服务开发者信息AK ACCESSKEY_SECRET constants/SmsConstants 阿里云短信服务开发者信息SK SIGN_NAME constants/SmsConstants 短信签名 TEMPLATE_YZ_LOGIN constants/SmsConstants 短信模板 注意事项： ​ 1.运行项目前确认本地9999端口未被占用，否则请修改配置文件的server.port属性； ​ 2.线上项目的SwaggerConfig中的@Profile(value = “dev”)value值设置为自己的线上环境配置文件名称； 6.运行项目输入swagger地址查看接口测试地址：localhost:8888/swagger-ui.html 如果线上环境切换成IP地址即可，生产环境记得禁用swagger。 说明： ​ 1.项目只是为了让用户体会阿里云的短信服务的功能，需要用户开通阿里云短信服务的功能后才能进行使用； ​ 2.项目中的短信模板以及短信签名都放在常量类中，项目小的情况下还能进行维护，如果短信服务做独立服务的话应该把这些变量作为参数传递或者使用配置中心进行解耦。]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>Springboot</tag>
+        <tag>短信服务</tag>
+        <tag>阿里云</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理]]></title>
+    <url>%2F2018%2F11%2F20%2F2018-11-20-%E4%BD%BF%E7%94%A8vmware%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%B9%B6%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B%E5%B7%A5%E5%85%B7%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%2F</url>
+    <content type="text"><![CDATA[Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理1. 首先需要安装虚拟机软件vmware：官网链接 2.虚拟机的网络设置：1.查看自己的宿主机的网络配置，打开CMD输入ipconfig查看 2. 在vmware中进行网络设置1.点击编辑—虚拟网络编辑器；2.点击更改设置，设置子网IP的网段与宿主机的网段一致；如果宿主机IP为192.168.0.1，则子网IP设置为192.168.0.XXX即可；子网掩码保持默认即可(这样做的目的是为了之后使用远程连接工具管理虚拟机，如果直接使用vmware进行虚拟机的相关操作可以不用与宿主机的IP段保持一致)；注意使用本地的DHCP服务要取消勾选： 3.点击NET设置，设置自己的网关IP进行记录，之后虚拟机中设置网络时需要； 3.开始安装虚拟机：1.创建虚拟机： 2.选择稍后安装系统； 3.选择要安装的linux的版本； 4.选择要安装的位置并 定义虚拟机名称，一般我以IP进行命名方便进行集群操作，另外虚拟机的安装目录最好统一放在同一目录下； 5.磁盘大小一般选择默认即可； 6.选择要安装的操作系统； 7.跳过系统检测开始进行系统安装； 8.设置系统的时区以及要支持的语言； 9.设置系统网络; 选择IPV4 Settings–method，选择Manual,Address输入要设置的虚拟机IP，只要与上述自己设置的网关的IP段保持一致即可，Netmask为上述的子网掩码，Gateway为上述自己设置的网关地址，输入完成点击save进行保存： 10.设置root用户的登录密码； 11.添加普通用户并设置登录密码，可略过； 12.等待系统安装完成进行重启； 13.登录系统查看网络信息1ifconfig ![(C:\Users\15927\Pictures\学习\开发环境\虚拟机\17编辑网络.png) 14.修改网络信息配置文件，设置静态IP12vi vi /etc/sysconfig/network-scripts/ifcfg-ens33上述的文件名称根据自己的网卡名称编写 个人配置信息参考： 123456789101112131415161718192021TYPE=&quot;Ethernet&quot;PROXY_METHOD=&quot;none&quot;BROWSER_ONLY=&quot;no&quot;BOOTPROTO=&quot;static&quot;DEFROUTE=&quot;yes&quot;IPV4_FAILURE_FATAL=&quot;no&quot;IPV6INIT=&quot;yes&quot;IPV6_AUTOCONF=&quot;yes&quot;IPV6_DEFROUTE=&quot;yes&quot;IPV6_FAILURE_FATAL=&quot;no&quot;IPV6_ADDR_GEN_MODE=&quot;stable-privacy&quot;NAME=&quot;ens33&quot;UUID=&quot;cf0e2c3c-8afe-47a3-96d0-59cc57ad1b14&quot;DEVICE=&quot;ens33&quot;ONBOOT=&quot;yes&quot;IPADDR=&quot;192.168.0.5&quot;PREFIX=&quot;24&quot;GATEWAY=&quot;192.168.0.100&quot;DNS1=8.8.8.8DNS2=&quot;192.168.0.100&quot;IPV6_PRIVACY=&quot;no&quot;]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>运维</tag>
+        <tag>虚拟机</tag>
+        <tag>Vmware</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[zookeeper安装]]></title>
+    <url>%2F2018%2F11%2F11%2F2018-11-11-zookeeper%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[zookeeper安装单机服务安装1.下载zookeeper(3.4.13) 官方链接 网盘下载2.上传至服务器并解压文件 1tar -xzvf zookeeper-3.4.13.tar.gz 3.cd 至zookeeper目录下创建data、logs目录123cd zookeeper-3.4.13mkdir datamkdir logs 4.创建cfg文件12345671. 创建zoo.cfgvim zoo.cfg2. 进行单机版配置tickTime=2000dataDir=/usr/local/zookeeper/zookeeper-3.4.13/datadataLogDir=/usr/local/zookeeper/zookeeper-3.4.13/logsclientPort=2181 5.启动命令121.切换至bin目录下2.使用./zkServer.sh进行相关操作 命令 解释 ./zkServer.sh start 启动 ./zkServer.sh stop 停止 ./zkServer.sh restart 重启 ./zkServer.sh status 查看状态 伪集群安装1.重命名文件夹1mv zookeeper3.4.13 zookeeper1 2.修改zoo.cfg文件12345678dataDir=/usr/local/zookeeper/zookeeper1/datadataLogDir=/usr/local/zookeeper/zookeeper1/logsclientPort=2181initLimit=5syncLimit=2server.1=127.0.0.1:2888:3888server.2=127.0.0.1:4888:5888server.3=127.0.0.1:6888:7888 3.创建myid文件123451. 定位至zoo.cfg设置的dataDir文件夹下：cd data/2. 创建myid文件vim myid输入 1 (这里一定要与zoo.cfg中的server名后的数字保持一致) 4.复制并修改相关配置文件12341. 复制文件夹cp -r zookeeper1 zookeeper2cp -r zookeeper1 zookeeper32. 修改关键内容，data目录下的myid文件，修改为服务后的数字 集群安装1. 上传zookeeper文件到三台虚拟机中并进行解压1tar -xzvf zookeeper-3.4.13.tar.gz 2.在解压的zookeeper文件夹下创建data，logs两个目录；1mkdir data logs 3.在conf文件夹下创建zoo.cfg文件12cd conf/vim zoo.cfg 4. 在zoo.cfg中输入内容12345678dataDir=/usr/local/zookeeper/zookeeper3.4.13/datadataLogDir=/usr/local/zookeeper/zookeeper3.4.13/logsclientPort=2181initLimit=5syncLimit=2server.1=192.168.1.4:2888:3888server.2=192.168.1.5:2888:3888server.3=192.168.1.6:2888:3888 5. 在data目录下创建myid文件，文件内容为server后的数字，例如192.168.1.4的zoo.cfg中server后的数字为1，则在4的机器data目录下创建myid文件，文件内容输入数字1即可12cd data/vim myid 6.检查每台机器的防火墙的状态，我这里是虚拟机为了方便操作，我直接将防火墙关闭了，生产环境请放行端口进行操作1234561. 查看防火墙状态systemctl status firewalld2. 关闭防火墙systemctl stop firewalld3. 禁止防火墙开机启动systemctl disable firewalld 7.启动每台机器的实例并查看状态12341. 启动zookeeper服务./zkServer.sh start 2. 查看每台机器的服务状态./zkServer.sh status zookeeper目录及命令介绍zookeeper主要目录结构 目录 用途 bin 主要的运行命令 conf 配置文件 contrib 附加功能 dist-maven mvn编译后的目录 docs 文档 lib 依赖JAR包 recipes 案列demo src 源码 zoo.cfg配置 配置项 含义 tickTime 计算的时间单元 initTime 允许从节点连接并同步到主节点的初始化连接时间，以tickTime的倍数来表示，用于集群 syncLimit master主节点与从节点之间发送消息请求和应答的时间长度（心跳机制） dataDir 数据目录 dataLogDir 日志目录，不建议使用/tmp临时目录 clientPort 连接端口 eg: 123456tickTime=2000dataDir=/usr/local/zookeeper/zookeeper1/datadataLogDir=/usr/local/zookeeper/zookeeper1/logsclientPort=2181initLimit=5syncLimit=2]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>运维</tag>
+        <tag>zookeeper</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[zookeeper客户端操作及ACL权限控制]]></title>
+    <url>%2F2018%2F11%2F11%2F2018-11-11-zookeeper%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%93%8D%E4%BD%9C%E4%BB%A5%E5%8F%8AACL%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%2F</url>
+    <content type="text"><![CDATA[zookeeper客户端操作及ACL权限控制简介作用： 中间件 ，提供协调服务 作用于分布式系统，为大数据服务 支持java 什么是分布式系统： 多台计算机组成整体，一致对外处理同一请求 内部计算机相互通信 客户端到服务端一次请求到响应结束历经多台计算机 分布式系统瓶颈 一致性：数据一致性，数据分批入库 原子性：不会局部化 单一视图：数据一致 可靠性：每次对ZK操作都保存在服务端 实时性：客户端读取ZK服务端最新数据 zookeeper基本数据模型 树形结构，可理解为Linux文件目录 每个节点称为znode, 每个节点分为临时节点与永久节点 每个zk节点都有各自的版本号，节点数据发生变化版本号会累加 删除/修改过时节点 zk节点存储的数据不宜过大 节点可以设置权限ACL zookeeper作用 master节点选举，主节点挂了以后从节点接手并保证唯一（首脑模式），保证集群高可用 配置文件统一管理，提高运维效率 发布与订阅，类似消息队列 提供分布式锁，分布式环境不同进程之间竞争资源 集群管理，集群中保证数据的强一致性 常用客户端命令操作客户端登录 语法格式 1./zkCli.sh ls与ls2命令 语法格式 12ls path [watch]ls2 path [watch] ls命令查看某节点下的节点数 ls2命令查看某节点的详细信息，等同于ls+stat get与stat 语法格式 12get path [watch]stat path [watch] get 获取节点数据 stat 获取当前节点状态，详细参数如下： 节点项 含义 cZxid zookeeper为节点分配的ID ctime 节点创建时间 mZxid 修改后的节点ID mtime 修改时间 pZxid 子节点ID cversion 子节点版本 dataVersion 数据版本号 aclVersion 权限版本号 ephemeralOwner 临时节点数量 dataLength 数据长度 numChildren 子节点数量 create创建节点 -s为顺序节点 -e为临时节点 create命令语法 1create [-s] [-e] path data acl create path data 默认创建非顺序持久化节点 create -s path data 创建顺序节点 create -e path data 创建临时节点 set 更改节点数据 语法格式 1set path data [version] set path data 直接修改节点数据 set path data [version] 基本版本号修改节点数据（乐观锁) delete 删除节点数据 语法格式 1delete path [version] delete path 直接删除节点 delete path [version] 基于版本号删除节点（乐观锁 ) session基本原理 客户端与服务端之间的连接存在会话 每个会话可以设置超时时间 心跳结束则session过期 session过期后临时节点znode会被抛弃 watcher机制简介 针对每个节点的操作都会有一个监督者watcher 监控的某个对象发生变化触发watcher事件 zk中的watcher是一次性的，触发后立即销毁 父节点，子节点的增删改都会触发watcher 不同类型的操作触发的watcher事件不同： 节点创建件 节点删除时间 节点数据变化事件 watcher事件类型父节点watcher事件 创建父节点后触发 NodeCreated 修改父节点触发 NodeDataChanged 删除父节点触发NodeDeleted 子节点watcher事件 ls为父节点设置watcher，创建子节点触发：NodeChildrenChanged ls为父节点设置watcher，删除子节点触发：NodeChildrenChanged 为什么子节点的创建与删除的watcher事件是相同的：对于父节点而言只关心子节点是否发生变化，而不会去关心变化的类型 ls为父节点设置watcher，修改子节点不触发事件，只有把子节点当成父节点的时候才能触发watcher事件：NodeDataChanged watcher使用场景 统一资源配置 ACL（Access control lists）权限控制简介 针对节点设置读写权限，保障数据安全性 权限permission可以指定不同的权限范围及角色 ACL命令行 语法 用途 图片 getAcl path 获取某节点acl权限信息 setAcl path acl 设置某节点acl权限信息 addauth scheme auth 输入认证授权信息，注册时输入明文密码，zk系统加密保存 super 权限添加 123456781.编辑./zkServer.sh文件vim ./zkServer.sh2.找到下面的内容nohup &quot;$JAVA&quot; &quot;-Dzookeeper.log.dir=$&#123;ZOO_LOG_DIR&#125;&quot; &quot;-Dzookeeper.root.logger=$&#123;ZOO_LOG4J_PROP&#125;&quot; \3.在\前面添加内容&quot;-Dzookeeper.DigestAuthenticationPro vider.superDigest=geekerit:rGhia4aR7QpOxSk4boNgq5DTEf8=&quot;4.重启zookeeper服务./zkServer.sh restart ACL构成 zk的ACL通过[scheme:id:permissions]来构成权限列表 | 字段 | 含义 || ———– | ————– || scheme | 采用的权限机制 || id | 允许访问的用户 || permissions | 权限组合字符串 | scheme world：只有一个id，anyone，组合写法：world:anyone:[permissions] auth：认证登录，注册用户有权限即可，组合形式：auth:user:password:[permissions] digest：需要对密码加密才能访问，组合形式：digest:username:BASE64(SHA1(password)):[permissions] ip：当设置为ip指定ip指定的ip地址，限制ip访问，组合形式：ip:192.168.1.1:[permissions] super：炒鸡管理员，拥有所有权限 permissions 权限字符串缩写crdwa | 字符串 | 命令 || —— | ————— || CREATE | 创建子节点 || READ | 获取节点/子节点 || WRITE | 设置节点数据 || DELETE | 删除子节点 || ADMIN | 设置权限 | 使用场景 开发测试环境分离 生产环境指定ip的服务访问相关节点 zk四字命令简介 通过自身提供的简写命令与服务器进行交互 需要安装nc命令 使用 stat 查看zk的状态信息，是否mode 1echo stat | nc localhost 2181 ruok 查看当前zkServer是否启动，返回imok 1echo ruok | nc localhost 2181 dump 列出未经处理的会话和临时节点 1echo dump | nc localhost 2181 conf 查看服务器配置 1echo conf | nc localhost 2181 cons 展示连接到服务器的客户端信息 1echo cons | nc localhost 2181 envi 环境变量 1echo envi | nc localhost 2181 mntr 监控zk的健康信息 1echo mntr | nc localhost 2181 wchs 展示watch的信息 1echo wchs | nc localhost 2181 wchc 查看session与watch的信息 1echo wchc | nc localhost 2181 wchp 查看path与watch的信息 1echo wchp | nc localhost 2181 注意使用wchc与wchp命令需要先在配置项中增加白名单设置(详细说明参照官方文档–Administrator’s Guide 中的4lw.commands.whitelist) 1234567&gt; 1. 编辑配置文件&gt; vim zoo.cfg&gt; 2. 添加如下命令(复制，手打注意不是4后边不是数字1而是字母l)&gt; 4lw.commands.whitelist=*&gt; 3. 重启服务&gt; ./zkServer restart &gt;]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>运维</tag>
+        <tag>zookeeper</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[springboot项目添加过滤器]]></title>
+    <url>%2F2018%2F11%2F06%2F2018-11-06-springboot%E6%B7%BB%E5%8A%A0%E8%BF%87%E6%BB%A4%E5%99%A8%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[springboot项目添加过滤器第一种方式创建过滤器类12345678910111213141516171819public class MyFilter implements Filter &#123; private static final Logger logger = LoggerFactory.getLogger(MyFilter.class); @Override public void init(FilterConfig filterConfig) throws ServletException &#123; &#125; @Override public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException &#123; HttpServletRequest request = (HttpServletRequest) servletRequest; logger.info("this is MyFilter,url :"+request.getRequestURI()); filterChain.doFilter(servletRequest, servletResponse); &#125; @Override public void destroy() &#123; &#125; 在过滤器类上添加注解@WebFilter(urlPatterns = “/*”)在启动类上添加包扫描注解@ServletComponentScan(basePackages ={“filter所在包名”})第二种方式同第一种方式，创建自己的过滤器类，但是不要使用注解声明为filter类创建web配置类，将自定义的filter注册为bean1234567891011121314@Configurationpublic class WebConfiguration &#123; @Bean public FilterRegistrationBean testFilterRegistration() &#123; FilterRegistrationBean registration = new FilterRegistrationBean(); registration.setFilter(new MyFilter()); registration.addUrlPatterns("/*"); registration.setName("MyFilter"); registration.setOrder(6); return registration; &#125;&#125; 过滤器实例1234567891011121314151617181920212223/** * 创建字符过滤器 * @return */ @Bean public FilterRegistrationBean charsetFilter()&#123; FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(); // 定义字符编码过滤器 CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter(); characterEncodingFilter.setForceEncoding(true); // 设置编码格式为UTF-8 characterEncodingFilter.setEncoding("UTF-8"); // 将过滤器注册 filterRegistrationBean.setFilter(characterEncodingFilter); // 创建过滤规则集合 List&lt;String&gt; patterns = new ArrayList&lt;&gt;(); // 设置过滤规则为全部过滤 patterns.add("/*"); // 加入过滤规则 filterRegistrationBean.setUrlPatterns(patterns); return filterRegistrationBean; &#125; 上述字符编码过滤器只有在spring.http.encoding.enabled=flase时才会生效]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>springboot</tag>
+        <tag>过滤器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[将java项目加入系统服务]]></title>
+    <url>%2F2018%2F11%2F06%2F2018-11-06-%E5%B0%86java%E9%A1%B9%E7%9B%AE%E5%8A%A0%E5%85%A5%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%2F</url>
+    <content type="text"><![CDATA[将java项目加入系统服务到/usr/lib/systemd/system文件夹下编辑服务脚本1cd /usr/lib/systemd/system 脚本内容如下1234567[Unit]Description=test_api serviceWants=network.target[Service]User=nobodyType=forkingExecStart=/bin/sh -c &apos;nohup /usr/local/java/jdk8/bin/java -jar /home/app/member/fordearme-member-system-0.0.1-SNAPSHOT.jar &amp;&apos; ExecStart指定脚本启动命令，注意java命令最好使用绝对路径执行 命令 作用 systemctl enable ***.service 服务开机自启 systemctl start ***.service 启动服务 systemctl status ***.service 查看服务状态 systemctl stop ***.service 停止服务]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>运维</tag>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[springboot集成dubbo时默认日志依赖与zookeeper日志依赖冲突解决]]></title>
+    <url>%2F2018%2F11%2F05%2F2018-11-05-springboot%E9%9B%86%E6%88%90dubbo%E6%97%A5%E5%BF%97%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3%2F</url>
+    <content type="text"><![CDATA[springboot集成dubbo时默认日志依赖与zookeeper日志依赖冲突解决异常信息12345678910111213141516171819Exception in thread &quot;main&quot; java.lang.IllegalArgumentException: LoggerFactory is not a Logback LoggerContext but Logback is on the classpath. Either remove Logback or the competing implementation (class org.slf4j.impl.Log4jLoggerFactory loaded from file:/F:/fordearme/utils/maven/apache-maven-3.5.3/repository/org/slf4j/slf4j-log4j12/1.7.25/slf4j-log4j12-1.7.25.jar). If you are using WebLogic you will need to add &apos;org.slf4j&apos; to prefer-application-packages in WEB-INF/weblogic.xml: org.slf4j.impl.Log4jLoggerFactory at org.springframework.util.Assert.instanceCheckFailed(Assert.java:655) at org.springframework.util.Assert.isInstanceOf(Assert.java:555) at org.springframework.boot.logging.logback.LogbackLoggingSystem.getLoggerContext(LogbackLoggingSystem.java:286) at org.springframework.boot.logging.logback.LogbackLoggingSystem.beforeInitialize(LogbackLoggingSystem.java:102) at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationStartingEvent(LoggingApplicationListener.java:217) at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:196) at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127) at org.springframework.boot.context.event.EventPublishingRunListener.starting(EventPublishingRunListener.java:69) at org.springframework.boot.SpringApplicationRunListeners.starting(SpringApplicationRunListeners.java:48) at org.springframework.boot.SpringApplication.run(SpringApplication.java:302) at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) at com.geekerit.springbootdubboprovider.SpringbootDubboProviderApplication.main(SpringbootDubboProviderApplication.java:11)Process finished with exit code 1 原因分析：由于集成dubbo需要引入zookeeper的客户端的依赖，但是zookeeper客户端的依赖中存在slf4j以及log4j的日志依赖，而springboot默认集成的日志依赖为logback，所以需要根据自己的偏好将其中某一日志依赖进行排除。 排除slf4j日志依赖： 1234567891011121314151617&lt;!--zookeeper依赖--&gt; &lt;!-- https://mvnrepository.com/artifact/com.101tec/zkclient --&gt; &lt;dependency&gt; &lt;groupId&gt;com.101tec&lt;/groupId&gt; &lt;artifactId&gt;zkclient&lt;/artifactId&gt; &lt;version&gt;0.10&lt;/version&gt; &lt;exclusions&gt; &lt;exclusion&gt; &lt;groupId&gt;org.slf4j&lt;/groupId&gt; &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt; &lt;/exclusion&gt; &lt;exclusion&gt; &lt;groupId&gt;log4j&lt;/groupId&gt; &lt;artifactId&gt;log4j&lt;/artifactId&gt; &lt;/exclusion&gt; &lt;/exclusions&gt; &lt;/dependency&gt; 排除logback日志依赖： 12345678910&lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter&lt;/artifactId&gt; &lt;exclusions&gt; &lt;exclusion&gt; &lt;groupId&gt;ch.qos.logback&lt;/groupId&gt; &lt;artifactId&gt;logback-classic&lt;/artifactId&gt; &lt;/exclusion&gt; &lt;/exclusions&gt;&lt;/dependency&gt; 依赖图： zookeeper日志依赖 springboot 默认日志依赖 参考博客 查看maven依赖树 解决slf4j 冲突]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>springboot</tag>
+        <tag>异常解决</tag>
+        <tag>日志冲突</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[centos7安装配置redis4]]></title>
+    <url>%2F2018%2F11%2F03%2F2018-11-03-centos7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis4%2F</url>
+    <content type="text"><![CDATA[centos7安装配置redis4安装redis安装编译环境1yum install gcc-c++ 下载上传redis源码安装包 redis官网链接 redis4网盘链接 解压文件1tar -xzvf redis-4.0.2.tar.gz 编译redis12341. cd 至解压完的redis目录下cd redis-4.0.22. 进行编译make 安装redis412PREFIX:安装redis到指定文件夹下make PREFIX=/usr/local/redis install 复制redis目录下的redis.conf文件到上一级目录的bin目录下并修改相关配置1231. 查看自己的服务器网卡地址ifconfig2. 修改bind的地址为上述查询网卡地址，注意这里不是设置你请求redis的IP地址，而是设置自己的服务器的网卡地址，同时不建议为了省事将bind地址设置为0.0.0.0，增加自己的服务器风险 启动redis服务12指定配置文件启动redis服务./redis-server redis.conf 本地客户端连接测试12如果没有提前设置过redis的密码，可以直接连接使用./redis-cli 设置了redis连接密码需要先进行密码验证才能使用客户端 远程redis可视化工具连接测试 可视化工具redis-desktop-Manager网盘链接 注册redis为系统服务123456789101112131415161718191.进入系统文件目录下cd /lib/systemd/system2. 创建redis的服务文件vim redis.service3. 复制以下内容到文件中[Unit]Description=redis serviceWants=network.target[Service]Type=forkingExecStart=/usr/local/redis/bin/redis-server /usr/local/redis/bin/redis.conf[Install]WantedBy=multi-user.target4. 设置开机启动systemctl enable redis5. 启动查看redissystemctl start redissystemctl status redissystemctl stop redis 待补充redis持久化相关配置参考博文： 阿里云 CentOS7安装redis4.0.9并开启远程访问]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>环境配置</tag>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[centos7安装配置jdk8]]></title>
+    <url>%2F2018%2F11%2F03%2F2018-11-03-centos7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEjdk8%2F</url>
+    <content type="text"><![CDATA[centos7安装配置jdk81.下载JDK源码包 官网链接 JDK8网盘链接 2. 创建java目录12cd /usr/local/mkdir java 3. 上传文件到目录下并进行解压1234561. 解压文件包tar -xzvf jdk-8u161-linux-x64.tar.gz -C /usr/local/java2. 定位至java文件夹下cd /usr/local/java3. 查看目录下的文件ll 4. 重命名文件夹并查看路径123456781. 重命名为jdk8(便于之后环境配置，非必须)mv jdk1.8.0_161/ jdk82. 再次查看目录下的文件ll3. 定位至jdk目录下cd jdk84. 查看当前路径并复制输出结果pwd 5.配置环境变量使用 vim /etc/profile 在文件最后追加以下java变量配置 12345# 将目录更换为自己的JDK安装目录(第二步最后的文件路径)export JAVA_HOME=/usr/local/java/jdk8 export JRE_HOME=$&#123;JAVA_HOME&#125;/jreexport CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/libexport PATH=$&#123;JAVA_HOME&#125;/bin:$PATH 6. 刷新配置文件1source /etc/profile 7. 查看java版本，验证安装是否成功使用java -version 进行查看]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>环境配置</tag>
+        <tag>JDK</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[kafka入门]]></title>
+    <url>%2F2018%2F11%2F01%2F2018-11-01-centos%E5%AE%89%E8%A3%85kafka%2F</url>
+    <content type="text"><![CDATA[下载zookeeper(3.4.13) 官方链接 网盘下载 上传至服务器并解压文件 1tar -xzvf zookeeper-3.4.13.tar.gz cd 至zookeeper目录下创建data、logs目录 123cd zookeeper-3.4.13mkdir datamkdir logs 创建cfg文件 1234tickTime=2000dataDir=/usr/local/zookeeper/zookeeper-3.4.13/datadataLogDir=/usr/local/zookeeper/zookeeper-3.4.13/logsclientPort=2181 启动命令 121.切换至bin目录下2.使用./zkServer.sh进行相关操作 命令 解释 ./zkServer.sh start 启动 ./zkServer.sh stop 停止 ./zkServer.sh restart 重启 ./zkServer.sh status 查看状态 重命名并复制文件夹 1mv zookeeper3.4.13 zookeeper1 修改zoo.cfg文件 12345678dataDir=/usr/local/zookeeper/zookeeper1/datadataLogDir=/usr/local/zookeeper/zookeeper1/logsclientPort=2181initLimit=5syncLimit=2server.1=127.0.0.1:2888:3888server.2=127.0.0.1:4888:5888server.3=127.0.0.1:6888:7888 创建myid文件 123cd data/vim myid输入 1 (这里与server名保持一致) 复制并修改相关配置文件 12cp -r zookeeper1 zookeeper2cp -r zookeeper1 zookeeper3 1234567891011121314151617181. 生产主题 ./kafka-console-producer.sh --broker-list localhost:9092 --topic test1 2. 订阅主题 ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test1 3. 启动kafka ./kafka-server-start.sh ../config/server.properties4. 查看已发布的主题./kafka-topics.sh --zookeeper localhost:2181 --list5. 查看主题描述./kafka-topics.sh --zookeeper localhost:2181 --describe --topic test16. 发布主题./kafka-topics.sh --zookeeper localhost:2181 --create --topic test1 --partitions 3 --replication-factor 1 kafka启动故障 1231.删除 /tmp/kafka-logs2.netstat -lnp|grep 90923.重新启动 待补充通过docker安装zookeeper与kafka并进行通信，提供服务 参考： 分布式Zookeeper安装搭建详解 zookeeper安装教程（zookeeper3.4.5为例）]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>消息中间件</tag>
+        <tag>kafka</tag>
+      </tags>
+  </entry>
+</search>
