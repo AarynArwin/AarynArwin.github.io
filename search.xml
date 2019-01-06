@@ -66,18 +66,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[springboot项目添加过滤器]]></title>
-    <url>%2F2018%2F11%2F06%2F2018-11-06-springboot%E6%B7%BB%E5%8A%A0%E8%BF%87%E6%BB%A4%E5%99%A8%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%2F</url>
-    <content type="text"><![CDATA[springboot项目添加过滤器第一种方式创建过滤器类12345678910111213141516171819public class MyFilter implements Filter &#123; private static final Logger logger = LoggerFactory.getLogger(MyFilter.class); @Override public void init(FilterConfig filterConfig) throws ServletException &#123; &#125; @Override public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException &#123; HttpServletRequest request = (HttpServletRequest) servletRequest; logger.info("this is MyFilter,url :"+request.getRequestURI()); filterChain.doFilter(servletRequest, servletResponse); &#125; @Override public void destroy() &#123; &#125; 在过滤器类上添加注解@WebFilter(urlPatterns = “/*”)在启动类上添加包扫描注解@ServletComponentScan(basePackages ={“filter所在包名”})第二种方式同第一种方式，创建自己的过滤器类，但是不要使用注解声明为filter类创建web配置类，将自定义的filter注册为bean1234567891011121314@Configurationpublic class WebConfiguration &#123; @Bean public FilterRegistrationBean testFilterRegistration() &#123; FilterRegistrationBean registration = new FilterRegistrationBean(); registration.setFilter(new MyFilter()); registration.addUrlPatterns("/*"); registration.setName("MyFilter"); registration.setOrder(6); return registration; &#125;&#125; 过滤器实例1234567891011121314151617181920212223/** * 创建字符过滤器 * @return */ @Bean public FilterRegistrationBean charsetFilter()&#123; FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(); // 定义字符编码过滤器 CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter(); characterEncodingFilter.setForceEncoding(true); // 设置编码格式为UTF-8 characterEncodingFilter.setEncoding("UTF-8"); // 将过滤器注册 filterRegistrationBean.setFilter(characterEncodingFilter); // 创建过滤规则集合 List&lt;String&gt; patterns = new ArrayList&lt;&gt;(); // 设置过滤规则为全部过滤 patterns.add("/*"); // 加入过滤规则 filterRegistrationBean.setUrlPatterns(patterns); return filterRegistrationBean; &#125; 上述字符编码过滤器只有在spring.http.encoding.enabled=flase时才会生效]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>springboot</tag>
-        <tag>过滤器</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[将java项目加入系统服务]]></title>
     <url>%2F2018%2F11%2F06%2F2018-11-06-%E5%B0%86java%E9%A1%B9%E7%9B%AE%E5%8A%A0%E5%85%A5%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%2F</url>
     <content type="text"><![CDATA[将java项目加入系统服务到/usr/lib/systemd/system文件夹下编辑服务脚本1cd /usr/lib/systemd/system 脚本内容如下1234567[Unit]Description=test_api serviceWants=network.target[Service]User=nobodyType=forkingExecStart=/bin/sh -c &apos;nohup /usr/local/java/jdk8/bin/java -jar /home/app/member/fordearme-member-system-0.0.1-SNAPSHOT.jar &amp;&apos; ExecStart指定脚本启动命令，注意java命令最好使用绝对路径执行 命令 作用 systemctl enable ***.service 服务开机自启 systemctl start ***.service 启动服务 systemctl status ***.service 查看服务状态 systemctl stop ***.service 停止服务]]></content>
@@ -87,6 +75,18 @@
       <tags>
         <tag>java</tag>
         <tag>运维</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[springboot项目添加过滤器]]></title>
+    <url>%2F2018%2F11%2F06%2F2018-11-06-springboot%E6%B7%BB%E5%8A%A0%E8%BF%87%E6%BB%A4%E5%99%A8%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[springboot项目添加过滤器第一种方式创建过滤器类12345678910111213141516171819public class MyFilter implements Filter &#123; private static final Logger logger = LoggerFactory.getLogger(MyFilter.class); @Override public void init(FilterConfig filterConfig) throws ServletException &#123; &#125; @Override public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException &#123; HttpServletRequest request = (HttpServletRequest) servletRequest; logger.info("this is MyFilter,url :"+request.getRequestURI()); filterChain.doFilter(servletRequest, servletResponse); &#125; @Override public void destroy() &#123; &#125; 在过滤器类上添加注解@WebFilter(urlPatterns = “/*”)在启动类上添加包扫描注解@ServletComponentScan(basePackages ={“filter所在包名”})第二种方式同第一种方式，创建自己的过滤器类，但是不要使用注解声明为filter类创建web配置类，将自定义的filter注册为bean1234567891011121314@Configurationpublic class WebConfiguration &#123; @Bean public FilterRegistrationBean testFilterRegistration() &#123; FilterRegistrationBean registration = new FilterRegistrationBean(); registration.setFilter(new MyFilter()); registration.addUrlPatterns("/*"); registration.setName("MyFilter"); registration.setOrder(6); return registration; &#125;&#125; 过滤器实例1234567891011121314151617181920212223/** * 创建字符过滤器 * @return */ @Bean public FilterRegistrationBean charsetFilter()&#123; FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(); // 定义字符编码过滤器 CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter(); characterEncodingFilter.setForceEncoding(true); // 设置编码格式为UTF-8 characterEncodingFilter.setEncoding("UTF-8"); // 将过滤器注册 filterRegistrationBean.setFilter(characterEncodingFilter); // 创建过滤规则集合 List&lt;String&gt; patterns = new ArrayList&lt;&gt;(); // 设置过滤规则为全部过滤 patterns.add("/*"); // 加入过滤规则 filterRegistrationBean.setUrlPatterns(patterns); return filterRegistrationBean; &#125; 上述字符编码过滤器只有在spring.http.encoding.enabled=flase时才会生效]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>springboot</tag>
+        <tag>过滤器</tag>
       </tags>
   </entry>
   <entry>
