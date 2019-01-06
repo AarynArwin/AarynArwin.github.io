@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[redis基础学习（一）]]></title>
+    <url>%2F2019%2F01%2F06%2F2019-01-06-redis%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0(%E4%B8%80)%2F</url>
+    <content type="text"><![CDATA[redis基础学习简介安装简介redis是一种使用内存作为存储介质的NoSQL型数据库 常用场景 缓存常用不常变数据，减少与数据库的交互，提高数据的访问速度 关系型数据库（mysql等支持的并发访问量较少，而redis支持的并发访问量则成倍增加） 分布式锁（setnx,incr） pub/sub模式 安装centos7安装配置redis4 数据结构Stringset操作语法1SET key value [EX seconds] [PX milliseconds] [NX|XX] 作用​ 将value值关联到key上 注意事项 如果key已经关联有其他value，则SET操作会覆盖原有值； 如果key原来存在过期时间，当SET操作执行后过期时间将被清除； 常用操作 设置键值的同时设置键过期时间 1234# 时间单位为秒SET key value EX second# 时间单位为毫秒SET key value PX millisecond 新增键值(键不存在时才会设置) 1SET key value NX 覆盖键值(键存在时才会设置) 1SET key value XX 获取字符串长度语法1STRLEN key 作用​ 返回 key 所储存的字符串值的长度。key不存在时返回长度为0 注意事项​ 当 key 储存的不是字符串值时，返回一个错误。 字符串追加语法1APPEND key value 作用​ 如果 key 已经存在并且是一个字符串， APPEND 命令将 value 追加到 key 原来的值的末尾。 ​ 如果 key 不存在， APPEND 就简单地将给定 key 设为 value ，就像执行 SET key value 一样。 字符串覆盖语法1SETRANGE key offset value 作用 用 value 参数覆写(overwrite)给定 key 所储存的字符串值，从偏移量 offset 开始。 不存在的 key 当作空白字符串处理。 SETRANGE 命令会确保字符串足够长以便将 value 设置在指定的偏移量上，如果给定 key 原来储存的字符串长度比偏移量小(比如字符串只有 5 个字符长，但你设置的 offset 是 10 )，那么原字符和偏移量之间的空白将用零字节(zerobytes, &quot;\x00&quot; )来填充。 注意事项 你能使用的最大偏移量是 2^29-1(536870911) ，因为 Redis 字符串的大小被限制在 512 兆(megabytes)以内。如果你需要使用比这更大的空间，你可以使用多个 key 。 获取字符串子串语法1GETRANGE key start end 作用 返回 key 中字符串值的子字符串，字符串的截取范围由 start 和 end 两个偏移量决定(包括 start 和 end 在内)。 负数偏移量表示从字符串最后开始计数， -1 表示最后一个字符， -2 表示倒数第二个，以此类推。 GETRANGE 通过保证子字符串的值域(range)不超过实际字符串的值域来处理超出范围的值域请求。 注意事项​ 该操作只支持正向获取子串，不支持回绕操作。例如，你可以获取从0-4下标的子串，但是不能获取从4-2下标的子串。 数值增减 命令 语法 作用 注意事项 INCR INCR key 将 key 中储存的数字值增一。 如果 key 不存在，那么 key 的值会先被初始化为 0 ，然后再执行 INCR 操作。如果值包含错误的类型，或字符串类型的值不能表示为数字，那么返回一个错误。本操作的值限制在 64 位(bit)有符号数字表示之内。 INCRBY INCRBY key increment 将 key 所储存的值加上增量 increment 。 同上 INCRBYFLOAT INCRBYFLOAT key increment 为 key 中所储存的值加上浮点数增量 increment 。 DECR DECR key 将 key 中储存的数字值减一。 同上 DECRBY DECRBY key decrement 将 key 所储存的值减去减量 decrement 。 同上 String实战 get，set命令：常用于数据缓存，与关系型数据库结合使用，存储数据时同时存储在redis与关系型数据库，取值时首先从redis中进行获取，减少与数据库的交互，提高数据的访问速度。 setnx:常用于分布式锁，数据不存在时才新增 incr:秒杀场景 setbit:签到功能，权限分配等 ​]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Springboot集成七牛云搭建自己的免费图床]]></title>
     <url>%2F2018%2F12%2F15%2F2018-12-15-%E5%9F%BA%E4%BA%8E%E4%B8%83%E7%89%9B%E4%BA%91%E4%BD%BF%E7%94%A8Springboot%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A%2F</url>
     <content type="text"><![CDATA[大家在写markdown的时候时常会用到上传图片的问题，本人使用的是七牛云做图片存储，每月的免费存储流量足够个人笔记使用，下边简单总结下我使用springboot基于七牛云搭建自己的免费图床的步骤，只需要修改关键参数即可体验。 项目地址体验流程1.开通自己的七牛云的账号并进行域名配置等操作，具体操作参照七牛云文档2.下载项目到本地修改配置后启动项目查看效果 需修改参数 包路径 参数介绍 AK constants 七牛云AK SK constants 是否 BUCKET constants 空间名称 IMAGE_URL_HTTP_VALUE constants 个人配置的空间域名 IMAGE_URL_HTTP_VALUE_SUFFIX constants 七牛云开启原图保护的间隔符与后缀，非必须 logback.xml 项目根路径下 修改为自己的本地文件夹的路径即可，否则项目启动可能会报错 3.启动项目并访问地址进行上传访问路径：localhost:8888 上传成功后即可获取图片地址，直接复制图片路径访问]]></content>
@@ -66,18 +77,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[将java项目加入系统服务]]></title>
-    <url>%2F2018%2F11%2F06%2F2018-11-06-%E5%B0%86java%E9%A1%B9%E7%9B%AE%E5%8A%A0%E5%85%A5%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%2F</url>
-    <content type="text"><![CDATA[将java项目加入系统服务到/usr/lib/systemd/system文件夹下编辑服务脚本1cd /usr/lib/systemd/system 脚本内容如下1234567[Unit]Description=test_api serviceWants=network.target[Service]User=nobodyType=forkingExecStart=/bin/sh -c &apos;nohup /usr/local/java/jdk8/bin/java -jar /home/app/member/fordearme-member-system-0.0.1-SNAPSHOT.jar &amp;&apos; ExecStart指定脚本启动命令，注意java命令最好使用绝对路径执行 命令 作用 systemctl enable ***.service 服务开机自启 systemctl start ***.service 启动服务 systemctl status ***.service 查看服务状态 systemctl stop ***.service 停止服务]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>运维</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[springboot项目添加过滤器]]></title>
     <url>%2F2018%2F11%2F06%2F2018-11-06-springboot%E6%B7%BB%E5%8A%A0%E8%BF%87%E6%BB%A4%E5%99%A8%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[springboot项目添加过滤器第一种方式创建过滤器类12345678910111213141516171819public class MyFilter implements Filter &#123; private static final Logger logger = LoggerFactory.getLogger(MyFilter.class); @Override public void init(FilterConfig filterConfig) throws ServletException &#123; &#125; @Override public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException &#123; HttpServletRequest request = (HttpServletRequest) servletRequest; logger.info("this is MyFilter,url :"+request.getRequestURI()); filterChain.doFilter(servletRequest, servletResponse); &#125; @Override public void destroy() &#123; &#125; 在过滤器类上添加注解@WebFilter(urlPatterns = “/*”)在启动类上添加包扫描注解@ServletComponentScan(basePackages ={“filter所在包名”})第二种方式同第一种方式，创建自己的过滤器类，但是不要使用注解声明为filter类创建web配置类，将自定义的filter注册为bean1234567891011121314@Configurationpublic class WebConfiguration &#123; @Bean public FilterRegistrationBean testFilterRegistration() &#123; FilterRegistrationBean registration = new FilterRegistrationBean(); registration.setFilter(new MyFilter()); registration.addUrlPatterns("/*"); registration.setName("MyFilter"); registration.setOrder(6); return registration; &#125;&#125; 过滤器实例1234567891011121314151617181920212223/** * 创建字符过滤器 * @return */ @Bean public FilterRegistrationBean charsetFilter()&#123; FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(); // 定义字符编码过滤器 CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter(); characterEncodingFilter.setForceEncoding(true); // 设置编码格式为UTF-8 characterEncodingFilter.setEncoding("UTF-8"); // 将过滤器注册 filterRegistrationBean.setFilter(characterEncodingFilter); // 创建过滤规则集合 List&lt;String&gt; patterns = new ArrayList&lt;&gt;(); // 设置过滤规则为全部过滤 patterns.add("/*"); // 加入过滤规则 filterRegistrationBean.setUrlPatterns(patterns); return filterRegistrationBean; &#125; 上述字符编码过滤器只有在spring.http.encoding.enabled=flase时才会生效]]></content>
@@ -87,6 +86,18 @@
       <tags>
         <tag>springboot</tag>
         <tag>过滤器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[将java项目加入系统服务]]></title>
+    <url>%2F2018%2F11%2F06%2F2018-11-06-%E5%B0%86java%E9%A1%B9%E7%9B%AE%E5%8A%A0%E5%85%A5%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%2F</url>
+    <content type="text"><![CDATA[将java项目加入系统服务到/usr/lib/systemd/system文件夹下编辑服务脚本1cd /usr/lib/systemd/system 脚本内容如下1234567[Unit]Description=test_api serviceWants=network.target[Service]User=nobodyType=forkingExecStart=/bin/sh -c &apos;nohup /usr/local/java/jdk8/bin/java -jar /home/app/member/fordearme-member-system-0.0.1-SNAPSHOT.jar &amp;&apos; ExecStart指定脚本启动命令，注意java命令最好使用绝对路径执行 命令 作用 systemctl enable ***.service 服务开机自启 systemctl start ***.service 启动服务 systemctl status ***.service 查看服务状态 systemctl stop ***.service 停止服务]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>运维</tag>
       </tags>
   </entry>
   <entry>

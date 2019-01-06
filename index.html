@@ -302,7 +302,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">11</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">12</span></a>
 
   </li>
 
@@ -367,6 +367,317 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/06/2019-01-06-redis基础学习(一)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aaryn">
+      <meta itemprop="description" content="Trust Commitment Care">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GeekerHub">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/06/2019-01-06-redis基础学习(一)/" class="post-title-link" itemprop="url">redis基础学习（一）</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-06 22:30:09" itemprop="dateCreated datePublished" datetime="2019-01-06T22:30:09+08:00">2019-01-06</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">2 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="redis基础学习"><a href="#redis基础学习" class="headerlink" title="redis基础学习"></a>redis基础学习</h1><h2 id="简介安装"><a href="#简介安装" class="headerlink" title="简介安装"></a>简介安装</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p><strong><a href="http://www.redis.net.cn/" target="_blank" rel="noopener">redis</a></strong>是一种使用内存作为存储介质的NoSQL型数据库</p>
+<h3 id="常用场景"><a href="#常用场景" class="headerlink" title="常用场景"></a>常用场景</h3><ul>
+<li><p>缓存常用不常变数据，减少与数据库的交互，提高数据的访问速度</p>
+<p>关系型数据库（mysql等支持的并发访问量较少，而redis支持的并发访问量则成倍增加）</p>
+</li>
+<li><p>分布式锁（setnx,incr）</p>
+</li>
+<li><p>pub/sub模式 </p>
+</li>
+</ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><strong><a href="https://blog.geekerit.com/2018/11/03/2018-11-03-centos7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis4/" target="_blank" rel="noopener">centos7安装配置redis4</a></strong></p>
+<hr>
+<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><h4 id="set操作"><a href="#set操作" class="headerlink" title="set操作"></a>set操作</h4><h5 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET key value [EX seconds] [PX milliseconds] [NX|XX]</span><br></pre></td></tr></table></figure>
+<h5 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h5><p>​    将value值关联到key上</p>
+<h5 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h5><ul>
+<li><p>如果key已经关联有其他value，则SET操作会覆盖原有值；</p>
+</li>
+<li><p>如果key原来存在过期时间，当SET操作执行后过期时间将被清除；</p>
+</li>
+</ul>
+<h5 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h5><ul>
+<li>设置键值的同时设置键过期时间</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 时间单位为秒</span><br><span class="line">SET key value EX second</span><br><span class="line"># 时间单位为毫秒</span><br><span class="line">SET key value PX millisecond</span><br></pre></td></tr></table></figure>
+<ul>
+<li>新增键值(键不存在时才会设置)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET key value NX</span><br></pre></td></tr></table></figure>
+<ul>
+<li>覆盖键值(键存在时才会设置)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET key value XX</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="获取字符串长度"><a href="#获取字符串长度" class="headerlink" title="获取字符串长度"></a>获取字符串长度</h4><h5 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">STRLEN key</span><br></pre></td></tr></table></figure>
+<h5 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h5><p>​    返回 <code>key</code> 所储存的字符串值的长度。key不存在时返回长度为0</p>
+<h5 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h5><p>​    当 <code>key</code> 储存的不是字符串值时，返回一个错误。</p>
+<p><img src="http://image.chengnanhuakai.com/image/blog/redis/redis%20strlen%E5%91%BD%E4%BB%A4.png-geekerit" alt=""></p>
+<hr>
+<h4 id="字符串追加"><a href="#字符串追加" class="headerlink" title="字符串追加"></a>字符串追加</h4><h5 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">APPEND key value</span><br></pre></td></tr></table></figure>
+<h5 id="作用-2"><a href="#作用-2" class="headerlink" title="作用"></a>作用</h5><p>​    如果 <code>key</code> 已经存在并且是一个字符串， <a href="http://doc.redisfans.com/string/append.html#append" target="_blank" rel="noopener">APPEND</a> 命令将 <code>value</code> 追加到 <code>key</code> 原来的值的末尾。</p>
+<p>​    如果 <code>key</code> 不存在， <a href="http://doc.redisfans.com/string/append.html#append" target="_blank" rel="noopener">APPEND</a> 就简单地将给定 <code>key</code> 设为 <code>value</code> ，就像执行 <code>SET key value</code> 一样。</p>
+<p><img src="http://image.chengnanhuakai.com/image/blog/redis/append%E5%91%BD%E4%BB%A4.png-geekerit" alt=""></p>
+<hr>
+<h4 id="字符串覆盖"><a href="#字符串覆盖" class="headerlink" title="字符串覆盖"></a>字符串覆盖</h4><h5 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SETRANGE key offset value</span><br></pre></td></tr></table></figure>
+<h5 id="作用-3"><a href="#作用-3" class="headerlink" title="作用"></a>作用</h5><ul>
+<li><p>用 <code>value</code> 参数覆写(overwrite)给定 <code>key</code> 所储存的字符串值，从偏移量 <code>offset</code> 开始。</p>
+</li>
+<li><p>不存在的 <code>key</code> 当作空白字符串处理。</p>
+</li>
+<li><p><a href="http://doc.redisfans.com/string/setrange.html#setrange" target="_blank" rel="noopener">SETRANGE</a> 命令会确保字符串足够长以便将 <code>value</code> 设置在指定的偏移量上，如果给定 <code>key</code> 原来储存的字符串长度比偏移量小(比如字符串只有 <code>5</code> 个字符长，但你设置的 <code>offset</code> 是 <code>10</code> )，那么原字符和偏移量之间的空白将用零字节(zerobytes, <code>&quot;\x00&quot;</code> )来填充。</p>
+</li>
+</ul>
+<h5 id="注意事项-2"><a href="#注意事项-2" class="headerlink" title="注意事项"></a>注意事项</h5><ul>
+<li>你能使用的最大偏移量是 2^29-1(536870911) ，因为 Redis 字符串的大小被限制在 512 兆(megabytes)以内。如果你需要使用比这更大的空间，你可以使用多个 <code>key</code> 。</li>
+</ul>
+<p><img src="http://image.chengnanhuakai.com/image/blog/redis/String%20SETRANGE%E5%91%BD%E4%BB%A4.png-geekerit" alt=""></p>
+<hr>
+<h4 id="获取字符串子串"><a href="#获取字符串子串" class="headerlink" title="获取字符串子串"></a>获取字符串子串</h4><h5 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GETRANGE key start end</span><br></pre></td></tr></table></figure>
+<h5 id="作用-4"><a href="#作用-4" class="headerlink" title="作用"></a>作用</h5><ul>
+<li><p>返回 <code>key</code> 中字符串值的子字符串，字符串的截取范围由 <code>start</code> 和 <code>end</code> 两个偏移量决定(包括 <code>start</code> 和 <code>end</code> 在内)。</p>
+</li>
+<li><p>负数偏移量表示从字符串最后开始计数， <code>-1</code> 表示最后一个字符， <code>-2</code> 表示倒数第二个，以此类推。</p>
+</li>
+<li><p><a href="http://doc.redisfans.com/string/getrange.html#getrange" target="_blank" rel="noopener">GETRANGE</a> 通过保证子字符串的值域(range)不超过实际字符串的值域来处理超出范围的值域请求。</p>
+</li>
+</ul>
+<h5 id="注意事项-3"><a href="#注意事项-3" class="headerlink" title="注意事项"></a>注意事项</h5><p>​    该操作只支持正向获取子串，不支持回绕操作。例如，你可以获取从0-4下标的子串，但是不能获取从4-2下标的子串。</p>
+<p><img src="http://image.chengnanhuakai.com/image/blog/redis/String%20GETRANGE%E5%91%BD%E4%BB%A4.png-geekerit" alt=""></p>
+<hr>
+<h4 id="数值增减"><a href="#数值增减" class="headerlink" title="数值增减"></a>数值增减</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>语法</th>
+<th>作用</th>
+<th>注意事项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INCR</td>
+<td>INCR key</td>
+<td>将 <code>key</code> 中储存的数字值增一。</td>
+<td>如果 <code>key</code> 不存在，那么 <code>key</code> 的值会先被初始化为 <code>0</code> ，然后再执行 <a href="http://doc.redisfans.com/string/incr.html#incr" target="_blank" rel="noopener">INCR</a> 操作。如果值包含错误的类型，或字符串类型的值不能表示为数字，那么返回一个错误。本操作的值限制在 64 位(bit)有符号数字表示之内。</td>
+</tr>
+<tr>
+<td>INCRBY</td>
+<td>INCRBY key increment</td>
+<td>将 <code>key</code> 所储存的值加上增量 <code>increment</code> 。</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>INCRBYFLOAT</td>
+<td>INCRBYFLOAT key increment</td>
+<td>为 <code>key</code> 中所储存的值加上浮点数增量 <code>increment</code> 。</td>
+<td></td>
+</tr>
+<tr>
+<td>DECR</td>
+<td>DECR key</td>
+<td>将 <code>key</code> 中储存的数字值减一。</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>DECRBY</td>
+<td>DECRBY key decrement</td>
+<td>将 <code>key</code> 所储存的值减去减量 <code>decrement</code> 。</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<p><img src="http://image.chengnanhuakai.com/image/blog/redis/String%20%E5%A2%9E%E5%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4.png-geekerit" alt=""></p>
+<hr>
+<h2 id="String实战"><a href="#String实战" class="headerlink" title="String实战"></a>String实战</h2><ul>
+<li><p>get，set命令：常用于数据缓存，与关系型数据库结合使用，存储数据时同时存储在redis与关系型数据库，取值时首先从redis中进行获取，减少与数据库的交互，提高数据的访问速度。</p>
+</li>
+<li><p>setnx:常用于分布式锁，数据不存在时才新增</p>
+</li>
+<li><p>incr:秒杀场景</p>
+</li>
+<li><p>setbit:签到功能，权限分配等</p>
+</li>
+</ul>
+<p>​    </p>
+
+          
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1377,201 +1688,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/06/2018-11-06-将java项目加入系统服务/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Aaryn">
-      <meta itemprop="description" content="Trust Commitment Care">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GeekerHub">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/11/06/2018-11-06-将java项目加入系统服务/" class="post-title-link" itemprop="url">将java项目加入系统服务</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-06 22:18:09" itemprop="dateCreated datePublished" datetime="2018-11-06T22:18:09+08:00">2018-11-06</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">513</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="将java项目加入系统服务"><a href="#将java项目加入系统服务" class="headerlink" title="将java项目加入系统服务"></a>将java项目加入系统服务</h2><h4 id="到-usr-lib-systemd-system文件夹下编辑服务脚本"><a href="#到-usr-lib-systemd-system文件夹下编辑服务脚本" class="headerlink" title="到/usr/lib/systemd/system文件夹下编辑服务脚本"></a>到/usr/lib/systemd/system文件夹下编辑服务脚本</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/lib/systemd/system</span><br></pre></td></tr></table></figure>
-<h4 id="脚本内容如下"><a href="#脚本内容如下" class="headerlink" title="脚本内容如下"></a>脚本内容如下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=test_api service</span><br><span class="line">Wants=network.target</span><br><span class="line">[Service]</span><br><span class="line">User=nobody</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/bin/sh -c &apos;nohup /usr/local/java/jdk8/bin/java -jar /home/app/member/fordearme-member-system-0.0.1-SNAPSHOT.jar &amp;&apos;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/11/06/2018-11-06-将java项目加入系统服务/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/06/2018-11-06-springboot添加过滤器的两种方式/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1766,7 +1882,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/05/2018-11-05-springboot集成dubbo日志依赖冲突解决/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/06/2018-11-06-将java项目加入系统服务/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Aaryn">
@@ -1786,7 +1902,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/11/05/2018-11-05-springboot集成dubbo日志依赖冲突解决/" class="post-title-link" itemprop="url">springboot集成dubbo时默认日志依赖与zookeeper日志依赖冲突解决</a>
+                <a href="/2018/11/06/2018-11-06-将java项目加入系统服务/" class="post-title-link" itemprop="url">将java项目加入系统服务</a>
               
             
           </h2>
@@ -1811,7 +1927,7 @@
                 
               
 
-              <time title="创建时间：2018-11-05 10:30:09" itemprop="dateCreated datePublished" datetime="2018-11-05T10:30:09+08:00">2018-11-05</time>
+              <time title="创建时间：2018-11-06 22:18:09" itemprop="dateCreated datePublished" datetime="2018-11-06T22:18:09+08:00">2018-11-06</time>
             
 
             
@@ -1857,7 +1973,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.6k</span>
+                <span title="本文字数">513</span>
               
 
               
@@ -1871,7 +1987,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">1 分钟</span>
               
             </div>
           
@@ -1892,11 +2008,12 @@
 
       
         
-          <h2 id="springboot集成dubbo时默认日志依赖与zookeeper日志依赖冲突解决"><a href="#springboot集成dubbo时默认日志依赖与zookeeper日志依赖冲突解决" class="headerlink" title="springboot集成dubbo时默认日志依赖与zookeeper日志依赖冲突解决"></a>springboot集成dubbo时默认日志依赖与zookeeper日志依赖冲突解决</h2><h4 id="异常信息"><a href="#异常信息" class="headerlink" title="异常信息"></a>异常信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Exception in thread &quot;main&quot; java.lang.IllegalArgumentException: LoggerFactory is not a Logback LoggerContext but Logback is on the classpath. Either remove Logback or the competing implementation (class org.slf4j.impl.Log4jLoggerFactory loaded from file:/F:/fordearme/utils/maven/apache-maven-3.5.3/repository/org/slf4j/slf4j-log4j12/1.7.25/slf4j-log4j12-1.7.25.jar). If you are using WebLogic you will need to add &apos;org.slf4j&apos; to prefer-application-packages in WEB-INF/weblogic.xml: org.slf4j.impl.Log4jLoggerFactory</span><br><span class="line">	at org.springframework.util.Assert.instanceCheckFailed(Assert.java:655)</span><br><span class="line">	at org.springframework.util.Assert.isInstanceOf(Assert.java:555)</span><br><span class="line">	at org.springframework.boot.logging.logback.LogbackLoggingSystem.getLoggerContext(LogbackLoggingSystem.java:286)</span><br><span class="line">	at org.springframework.boot.logging.logback.LogbackLoggingSystem.beforeInitialize(LogbackLoggingSystem.java:102)</span><br><span class="line">	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationStartingEvent(LoggingApplicationListener.java:217)</span><br><span class="line">	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:196)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)</span><br><span class="line">	at org.springframework.boot.context.event.EventPublishingRunListener.starting(EventPublishingRunListener.java:69)</span><br><span class="line">	at org.springframework.boot.SpringApplicationRunListeners.starting(SpringApplicationRunListeners.java:48)</span><br><span class="line">	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)</span><br><span class="line">	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)</span><br><span class="line">	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)</span><br><span class="line">	at com.geekerit.springbootdubboprovider.SpringbootDubboProviderApplication.main(SpringbootDubboProviderApplication.java:11)</span><br><span class="line"></span><br><span class="line">Process finished with exit code 1</span><br></pre></td></tr></table></figure>
+          <h2 id="将java项目加入系统服务"><a href="#将java项目加入系统服务" class="headerlink" title="将java项目加入系统服务"></a>将java项目加入系统服务</h2><h4 id="到-usr-lib-systemd-system文件夹下编辑服务脚本"><a href="#到-usr-lib-systemd-system文件夹下编辑服务脚本" class="headerlink" title="到/usr/lib/systemd/system文件夹下编辑服务脚本"></a>到/usr/lib/systemd/system文件夹下编辑服务脚本</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/lib/systemd/system</span><br></pre></td></tr></table></figure>
+<h4 id="脚本内容如下"><a href="#脚本内容如下" class="headerlink" title="脚本内容如下"></a>脚本内容如下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=test_api service</span><br><span class="line">Wants=network.target</span><br><span class="line">[Service]</span><br><span class="line">User=nobody</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/bin/sh -c &apos;nohup /usr/local/java/jdk8/bin/java -jar /home/app/member/fordearme-member-system-0.0.1-SNAPSHOT.jar &amp;&apos;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/11/05/2018-11-05-springboot集成dubbo日志依赖冲突解决/#more" rel="contents">
+              <a class="btn" href="/2018/11/06/2018-11-06-将java项目加入系统服务/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1996,7 +2113,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2158,7 +2275,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">20k</span>
+    <span title="站点总字数">22k</span>
   
 
   
@@ -2167,7 +2284,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">18 分钟</span>
+    <span title="站点阅读时长">20 分钟</span>
   
 </div>
 

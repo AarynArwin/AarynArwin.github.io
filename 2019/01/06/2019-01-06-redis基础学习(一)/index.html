@@ -96,47 +96,31 @@
 
 
 
-  <meta name="description" content="Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理1. 首先需要安装虚拟机软件vmware：官网链接 2.虚拟机的网络设置：1.查看自己的宿主机的网络配置，打开CMD输入ipconfig查看 2. 在vmware中进行网络设置1.点击编辑—虚拟网络编辑器；">
-<meta name="keywords" content="运维,虚拟机,Vmware">
+  <meta name="description" content="redis基础学习简介安装简介redis是一种使用内存作为存储介质的NoSQL型数据库 常用场景 缓存常用不常变数据，减少与数据库的交互，提高数据的访问速度 关系型数据库（mysql等支持的并发访问量较少，而redis支持的并发访问量则成倍增加）  分布式锁（setnx,incr）  pub/sub模式    安装centos7安装配置redis4  数据结构Stringset操作语法1SET k">
+<meta name="keywords" content="redis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理">
-<meta property="og:url" content="http://yoursite.com/2018/11/20/2018-11-20-使用vmware安装虚拟机并使用远程工具进行管理/index.html">
+<meta property="og:title" content="redis基础学习（一）">
+<meta property="og:url" content="http://yoursite.com/2019/01/06/2019-01-06-redis基础学习(一)/index.html">
 <meta property="og:site_name" content="GeekerHub">
-<meta property="og:description" content="Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理1. 首先需要安装虚拟机软件vmware：官网链接 2.虚拟机的网络设置：1.查看自己的宿主机的网络配置，打开CMD输入ipconfig查看 2. 在vmware中进行网络设置1.点击编辑—虚拟网络编辑器；">
+<meta property="og:description" content="redis基础学习简介安装简介redis是一种使用内存作为存储介质的NoSQL型数据库 常用场景 缓存常用不常变数据，减少与数据库的交互，提高数据的访问速度 关系型数据库（mysql等支持的并发访问量较少，而redis支持的并发访问量则成倍增加）  分布式锁（setnx,incr）  pub/sub模式    安装centos7安装配置redis4  数据结构Stringset操作语法1SET k">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/21.png-geekerit">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/18%E6%9B%B4%E6%94%B9%E8%AE%BE%E7%BD%AE.png-geekerit">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/19.png-geekerit">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/20%E8%AE%BE%E7%BD%AE%E7%BD%91%E5%85%B3%E5%9C%B0%E5%9D%80.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA.png-geekerit">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/2%E7%A8%8D%E5%90%8E%E5%AE%89%E8%A3%85%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.png-geekerit">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/3%E9%80%89%E6%8B%A9%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC.png-geekerit">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/4%E8%AE%BE%E7%BD%AE%E5%90%8D%E7%A7%B0.png-geekerit">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/5%E8%AE%BE%E7%BD%AE%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8F.png-geekerit">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/7%E9%80%89%E6%8B%A9%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F.png-geekerit">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/8.png-geekerit">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/9%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85.png-geekerit">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/11.1%E8%B0%83%E6%95%B4%E6%97%B6%E9%97%B4%E4%B8%8E%E8%AF%AD%E8%A8%80.png-geekerit">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/11.2%E7%BD%91%E7%BB%9C.png-geekerit">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE.png-geekerit">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/13%E8%AE%BE%E7%BD%AEroot%E5%AF%86%E7%A0%81.png-geekerit">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/14%E6%B7%BB%E5%8A%A0%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7.png-geekerit">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/15%E9%87%8D%E5%90%AF%E7%B3%BB%E7%BB%9F.png-geekerit">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/16%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F.png-geekerit">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/17%E7%BC%96%E8%BE%91%E7%BD%91%E7%BB%9C.png-geekerit">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE.png-geekerit">
-<meta property="og:updated_time" content="2019-01-06T07:14:48.098Z">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/redis/redis%20strlen%E5%91%BD%E4%BB%A4.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/redis/append%E5%91%BD%E4%BB%A4.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/redis/String%20SETRANGE%E5%91%BD%E4%BB%A4.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/redis/String%20GETRANGE%E5%91%BD%E4%BB%A4.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/redis/String%20%E5%A2%9E%E5%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4.png-geekerit">
+<meta property="og:updated_time" content="2019-01-06T15:06:11.502Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理">
-<meta name="twitter:description" content="Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理1. 首先需要安装虚拟机软件vmware：官网链接 2.虚拟机的网络设置：1.查看自己的宿主机的网络配置，打开CMD输入ipconfig查看 2. 在vmware中进行网络设置1.点击编辑—虚拟网络编辑器；">
-<meta name="twitter:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/21.png-geekerit">
+<meta name="twitter:title" content="redis基础学习（一）">
+<meta name="twitter:description" content="redis基础学习简介安装简介redis是一种使用内存作为存储介质的NoSQL型数据库 常用场景 缓存常用不常变数据，减少与数据库的交互，提高数据的访问速度 关系型数据库（mysql等支持的并发访问量较少，而redis支持的并发访问量则成倍增加）  分布式锁（setnx,incr）  pub/sub模式    安装centos7安装配置redis4  数据结构Stringset操作语法1SET k">
+<meta name="twitter:image" content="http://image.chengnanhuakai.com/image/blog/redis/redis%20strlen%E5%91%BD%E4%BB%A4.png-geekerit">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/20/2018-11-20-使用vmware安装虚拟机并使用远程工具进行管理/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/06/2019-01-06-redis基础学习(一)/">
 
 
 
@@ -146,7 +130,7 @@
   };
 </script>
 
-  <title>Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理 | GeekerHub</title>
+  <title>redis基础学习（一） | GeekerHub</title>
   
 
 
@@ -405,7 +389,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/2018-11-20-使用vmware安装虚拟机并使用远程工具进行管理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/06/2019-01-06-redis基础学习(一)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Aaryn">
@@ -422,7 +406,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理
+          <h2 class="post-title" itemprop="name headline">redis基础学习（一）
 
               
             
@@ -448,7 +432,7 @@
                 
               
 
-              <time title="创建时间：2018-11-20 23:48:09" itemprop="dateCreated datePublished" datetime="2018-11-20T23:48:09+08:00">2018-11-20</time>
+              <time title="创建时间：2019-01-06 22:30:09" itemprop="dateCreated datePublished" datetime="2019-01-06T22:30:09+08:00">2019-01-06</time>
             
 
             
@@ -494,7 +478,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.5k</span>
+                <span title="本文字数">2k</span>
               
 
               
@@ -508,7 +492,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -528,35 +512,130 @@
       
 
       
-        <h1 id="Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理"><a href="#Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理" class="headerlink" title="Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理"></a>Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理</h1><h3 id="1-首先需要安装虚拟机软件vmware："><a href="#1-首先需要安装虚拟机软件vmware：" class="headerlink" title="1. 首先需要安装虚拟机软件vmware："></a>1. 首先需要安装虚拟机软件vmware：</h3><p><a href="https://www.vmware.com/" target="_blank" rel="noopener">官网链接</a></p>
-<h3 id="2-虚拟机的网络设置："><a href="#2-虚拟机的网络设置：" class="headerlink" title="2.虚拟机的网络设置："></a>2.虚拟机的网络设置：</h3><h4 id="1-查看自己的宿主机的网络配置，打开CMD输入ipconfig查看"><a href="#1-查看自己的宿主机的网络配置，打开CMD输入ipconfig查看" class="headerlink" title="1.查看自己的宿主机的网络配置，打开CMD输入ipconfig查看"></a>1.查看自己的宿主机的网络配置，打开CMD输入ipconfig查看</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/21.png-geekerit" alt=""></p>
-<h4 id="2-在vmware中进行网络设置"><a href="#2-在vmware中进行网络设置" class="headerlink" title="2. 在vmware中进行网络设置"></a>2. 在vmware中进行网络设置</h4><h5 id="1-点击编辑—虚拟网络编辑器；"><a href="#1-点击编辑—虚拟网络编辑器；" class="headerlink" title="1.点击编辑—虚拟网络编辑器；"></a>1.点击编辑—虚拟网络编辑器；</h5><a id="more"></a>
-<h5 id="2-点击更改设置，设置子网IP的网段与宿主机的网段一致；如果宿主机IP为192-168-0-1，则子网IP设置为192-168-0-XXX即可；子网掩码保持默认即可-这样做的目的是为了之后使用远程连接工具管理虚拟机，如果直接使用vmware进行虚拟机的相关操作可以不用与宿主机的IP段保持一致-；注意使用本地的DHCP服务要取消勾选："><a href="#2-点击更改设置，设置子网IP的网段与宿主机的网段一致；如果宿主机IP为192-168-0-1，则子网IP设置为192-168-0-XXX即可；子网掩码保持默认即可-这样做的目的是为了之后使用远程连接工具管理虚拟机，如果直接使用vmware进行虚拟机的相关操作可以不用与宿主机的IP段保持一致-；注意使用本地的DHCP服务要取消勾选：" class="headerlink" title="2.点击更改设置，设置子网IP的网段与宿主机的网段一致；如果宿主机IP为192.168.0.1，则子网IP设置为192.168.0.XXX即可；子网掩码保持默认即可(这样做的目的是为了之后使用远程连接工具管理虚拟机，如果直接使用vmware进行虚拟机的相关操作可以不用与宿主机的IP段保持一致)；注意使用本地的DHCP服务要取消勾选："></a>2.点击更改设置，设置子网IP的网段与宿主机的网段一致；如果宿主机IP为192.168.0.1，则子网IP设置为192.168.0.XXX即可；子网掩码保持默认即可(这样做的目的是为了之后使用远程连接工具管理虚拟机，如果直接使用vmware进行虚拟机的相关操作可以不用与宿主机的IP段保持一致)；注意使用本地的DHCP服务要取消勾选：</h5><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/18%E6%9B%B4%E6%94%B9%E8%AE%BE%E7%BD%AE.png-geekerit" alt=""></p>
-<p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/19.png-geekerit" alt=""></p>
-<h5 id="3-点击NET设置，设置自己的网关IP进行记录，之后虚拟机中设置网络时需要；"><a href="#3-点击NET设置，设置自己的网关IP进行记录，之后虚拟机中设置网络时需要；" class="headerlink" title="3.点击NET设置，设置自己的网关IP进行记录，之后虚拟机中设置网络时需要；"></a>3.点击NET设置，设置自己的网关IP进行记录，之后虚拟机中设置网络时需要；</h5><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/20%E8%AE%BE%E7%BD%AE%E7%BD%91%E5%85%B3%E5%9C%B0%E5%9D%80.png" alt=""></p>
-<h3 id="3-开始安装虚拟机："><a href="#3-开始安装虚拟机：" class="headerlink" title="3.开始安装虚拟机："></a>3.开始安装虚拟机：</h3><h4 id="1-创建虚拟机："><a href="#1-创建虚拟机：" class="headerlink" title="1.创建虚拟机："></a>1.创建虚拟机：</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA.png-geekerit" alt=""></p>
-<h4 id="2-选择稍后安装系统；"><a href="#2-选择稍后安装系统；" class="headerlink" title="2.选择稍后安装系统；"></a>2.选择稍后安装系统；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/2%E7%A8%8D%E5%90%8E%E5%AE%89%E8%A3%85%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.png-geekerit" alt=""></p>
-<h4 id="3-选择要安装的linux的版本；"><a href="#3-选择要安装的linux的版本；" class="headerlink" title="3.选择要安装的linux的版本；"></a>3.选择要安装的linux的版本；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/3%E9%80%89%E6%8B%A9%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC.png-geekerit" alt=""></p>
-<h4 id="4-选择要安装的位置并-定义虚拟机名称，一般我以IP进行命名方便进行集群操作，另外虚拟机的安装目录最好统一放在同一目录下；"><a href="#4-选择要安装的位置并-定义虚拟机名称，一般我以IP进行命名方便进行集群操作，另外虚拟机的安装目录最好统一放在同一目录下；" class="headerlink" title="4.选择要安装的位置并 定义虚拟机名称，一般我以IP进行命名方便进行集群操作，另外虚拟机的安装目录最好统一放在同一目录下；"></a>4.选择要安装的位置并 定义虚拟机名称，一般我以IP进行命名方便进行集群操作，另外虚拟机的安装目录最好统一放在同一目录下；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/4%E8%AE%BE%E7%BD%AE%E5%90%8D%E7%A7%B0.png-geekerit" alt=""></p>
-<h4 id="5-磁盘大小一般选择默认即可；"><a href="#5-磁盘大小一般选择默认即可；" class="headerlink" title="5.磁盘大小一般选择默认即可；"></a>5.磁盘大小一般选择默认即可；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/5%E8%AE%BE%E7%BD%AE%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8F.png-geekerit" alt=""></p>
-<h4 id="6-选择要安装的操作系统；"><a href="#6-选择要安装的操作系统；" class="headerlink" title="6.选择要安装的操作系统；"></a>6.选择要安装的操作系统；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/7%E9%80%89%E6%8B%A9%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F.png-geekerit" alt=""></p>
-<p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/8.png-geekerit" alt="8"></p>
-<h4 id="7-跳过系统检测开始进行系统安装；"><a href="#7-跳过系统检测开始进行系统安装；" class="headerlink" title="7.跳过系统检测开始进行系统安装；"></a>7.跳过系统检测开始进行系统安装；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/9%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85.png-geekerit" alt=""></p>
-<h4 id="8-设置系统的时区以及要支持的语言；"><a href="#8-设置系统的时区以及要支持的语言；" class="headerlink" title="8.设置系统的时区以及要支持的语言；"></a>8.设置系统的时区以及要支持的语言；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/11.1%E8%B0%83%E6%95%B4%E6%97%B6%E9%97%B4%E4%B8%8E%E8%AF%AD%E8%A8%80.png-geekerit" alt=""></p>
-<h4 id="9-设置系统网络"><a href="#9-设置系统网络" class="headerlink" title="9.设置系统网络;"></a>9.设置系统网络;</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/11.2%E7%BD%91%E7%BB%9C.png-geekerit" alt=""></p>
-<p>选择IPV4 Settings–method，选择Manual,Address输入要设置的虚拟机IP，只要与上述自己设置的网关的IP段保持一致即可，Netmask为上述的子网掩码，Gateway为上述自己设置的网关地址，输入完成点击save进行保存：</p>
-<p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE.png-geekerit" alt=""></p>
-<h4 id="10-设置root用户的登录密码；"><a href="#10-设置root用户的登录密码；" class="headerlink" title="10.设置root用户的登录密码；"></a>10.设置root用户的登录密码；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/13%E8%AE%BE%E7%BD%AEroot%E5%AF%86%E7%A0%81.png-geekerit" alt=""></p>
-<h4 id="11-添加普通用户并设置登录密码，可略过；"><a href="#11-添加普通用户并设置登录密码，可略过；" class="headerlink" title="11.添加普通用户并设置登录密码，可略过；"></a>11.添加普通用户并设置登录密码，可略过；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/14%E6%B7%BB%E5%8A%A0%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7.png-geekerit" alt=""></p>
-<h4 id="12-等待系统安装完成进行重启；"><a href="#12-等待系统安装完成进行重启；" class="headerlink" title="12.等待系统安装完成进行重启；"></a>12.等待系统安装完成进行重启；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/15%E9%87%8D%E5%90%AF%E7%B3%BB%E7%BB%9F.png-geekerit" alt=""></p>
-<h4 id="13-登录系统查看网络信息"><a href="#13-登录系统查看网络信息" class="headerlink" title="13.登录系统查看网络信息"></a>13.登录系统查看网络信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
-<p>![(C:\Users\15927\Pictures\学习\开发环境\虚拟机\17编辑网络.png)</p>
-<p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/16%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F.png-geekerit" alt="16登录系统"></p>
-<p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/17%E7%BC%96%E8%BE%91%E7%BD%91%E7%BB%9C.png-geekerit" alt=""></p>
-<h4 id="14-修改网络信息配置文件，设置静态IP"><a href="#14-修改网络信息配置文件，设置静态IP" class="headerlink" title="14.修改网络信息配置文件，设置静态IP"></a>14.修改网络信息配置文件，设置静态IP</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br><span class="line">上述的文件名称根据自己的网卡名称编写</span><br></pre></td></tr></table></figure>
-<p>个人配置信息参考：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">TYPE=&quot;Ethernet&quot;</span><br><span class="line">PROXY_METHOD=&quot;none&quot;</span><br><span class="line">BROWSER_ONLY=&quot;no&quot;</span><br><span class="line">BOOTPROTO=&quot;static&quot;</span><br><span class="line">DEFROUTE=&quot;yes&quot;</span><br><span class="line">IPV4_FAILURE_FATAL=&quot;no&quot;</span><br><span class="line">IPV6INIT=&quot;yes&quot;</span><br><span class="line">IPV6_AUTOCONF=&quot;yes&quot;</span><br><span class="line">IPV6_DEFROUTE=&quot;yes&quot;</span><br><span class="line">IPV6_FAILURE_FATAL=&quot;no&quot;</span><br><span class="line">IPV6_ADDR_GEN_MODE=&quot;stable-privacy&quot;</span><br><span class="line">NAME=&quot;ens33&quot;</span><br><span class="line">UUID=&quot;cf0e2c3c-8afe-47a3-96d0-59cc57ad1b14&quot;</span><br><span class="line">DEVICE=&quot;ens33&quot;</span><br><span class="line">ONBOOT=&quot;yes&quot;</span><br><span class="line">IPADDR=&quot;192.168.0.5&quot;</span><br><span class="line">PREFIX=&quot;24&quot;</span><br><span class="line">GATEWAY=&quot;192.168.0.100&quot;</span><br><span class="line">DNS1=8.8.8.8</span><br><span class="line">DNS2=&quot;192.168.0.100&quot;</span><br><span class="line">IPV6_PRIVACY=&quot;no&quot;</span><br></pre></td></tr></table></figure>
-<p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE.png-geekerit" alt=""></p>
+        <h1 id="redis基础学习"><a href="#redis基础学习" class="headerlink" title="redis基础学习"></a>redis基础学习</h1><h2 id="简介安装"><a href="#简介安装" class="headerlink" title="简介安装"></a>简介安装</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p><strong><a href="http://www.redis.net.cn/" target="_blank" rel="noopener">redis</a></strong>是一种使用内存作为存储介质的NoSQL型数据库</p>
+<h3 id="常用场景"><a href="#常用场景" class="headerlink" title="常用场景"></a>常用场景</h3><ul>
+<li><p>缓存常用不常变数据，减少与数据库的交互，提高数据的访问速度</p>
+<p>关系型数据库（mysql等支持的并发访问量较少，而redis支持的并发访问量则成倍增加）</p>
+</li>
+<li><p>分布式锁（setnx,incr）</p>
+</li>
+<li><p>pub/sub模式 </p>
+</li>
+</ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><strong><a href="https://blog.geekerit.com/2018/11/03/2018-11-03-centos7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEredis4/" target="_blank" rel="noopener">centos7安装配置redis4</a></strong></p>
+<hr>
+<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><h4 id="set操作"><a href="#set操作" class="headerlink" title="set操作"></a>set操作</h4><h5 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET key value [EX seconds] [PX milliseconds] [NX|XX]</span><br></pre></td></tr></table></figure>
+<h5 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h5><p>​    将value值关联到key上</p>
+<h5 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h5><ul>
+<li><p>如果key已经关联有其他value，则SET操作会覆盖原有值；</p>
+</li>
+<li><p>如果key原来存在过期时间，当SET操作执行后过期时间将被清除；</p>
+</li>
+</ul>
+<h5 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h5><ul>
+<li>设置键值的同时设置键过期时间</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 时间单位为秒</span><br><span class="line">SET key value EX second</span><br><span class="line"># 时间单位为毫秒</span><br><span class="line">SET key value PX millisecond</span><br></pre></td></tr></table></figure>
+<ul>
+<li>新增键值(键不存在时才会设置)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET key value NX</span><br></pre></td></tr></table></figure>
+<ul>
+<li>覆盖键值(键存在时才会设置)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET key value XX</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="获取字符串长度"><a href="#获取字符串长度" class="headerlink" title="获取字符串长度"></a>获取字符串长度</h4><h5 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">STRLEN key</span><br></pre></td></tr></table></figure>
+<h5 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h5><p>​    返回 <code>key</code> 所储存的字符串值的长度。key不存在时返回长度为0</p>
+<h5 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h5><p>​    当 <code>key</code> 储存的不是字符串值时，返回一个错误。</p>
+<p><img src="http://image.chengnanhuakai.com/image/blog/redis/redis%20strlen%E5%91%BD%E4%BB%A4.png-geekerit" alt=""></p>
+<hr>
+<h4 id="字符串追加"><a href="#字符串追加" class="headerlink" title="字符串追加"></a>字符串追加</h4><h5 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">APPEND key value</span><br></pre></td></tr></table></figure>
+<h5 id="作用-2"><a href="#作用-2" class="headerlink" title="作用"></a>作用</h5><p>​    如果 <code>key</code> 已经存在并且是一个字符串， <a href="http://doc.redisfans.com/string/append.html#append" target="_blank" rel="noopener">APPEND</a> 命令将 <code>value</code> 追加到 <code>key</code> 原来的值的末尾。</p>
+<p>​    如果 <code>key</code> 不存在， <a href="http://doc.redisfans.com/string/append.html#append" target="_blank" rel="noopener">APPEND</a> 就简单地将给定 <code>key</code> 设为 <code>value</code> ，就像执行 <code>SET key value</code> 一样。</p>
+<p><img src="http://image.chengnanhuakai.com/image/blog/redis/append%E5%91%BD%E4%BB%A4.png-geekerit" alt=""></p>
+<hr>
+<h4 id="字符串覆盖"><a href="#字符串覆盖" class="headerlink" title="字符串覆盖"></a>字符串覆盖</h4><h5 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SETRANGE key offset value</span><br></pre></td></tr></table></figure>
+<h5 id="作用-3"><a href="#作用-3" class="headerlink" title="作用"></a>作用</h5><ul>
+<li><p>用 <code>value</code> 参数覆写(overwrite)给定 <code>key</code> 所储存的字符串值，从偏移量 <code>offset</code> 开始。</p>
+</li>
+<li><p>不存在的 <code>key</code> 当作空白字符串处理。</p>
+</li>
+<li><p><a href="http://doc.redisfans.com/string/setrange.html#setrange" target="_blank" rel="noopener">SETRANGE</a> 命令会确保字符串足够长以便将 <code>value</code> 设置在指定的偏移量上，如果给定 <code>key</code> 原来储存的字符串长度比偏移量小(比如字符串只有 <code>5</code> 个字符长，但你设置的 <code>offset</code> 是 <code>10</code> )，那么原字符和偏移量之间的空白将用零字节(zerobytes, <code>&quot;\x00&quot;</code> )来填充。</p>
+</li>
+</ul>
+<h5 id="注意事项-2"><a href="#注意事项-2" class="headerlink" title="注意事项"></a>注意事项</h5><ul>
+<li>你能使用的最大偏移量是 2^29-1(536870911) ，因为 Redis 字符串的大小被限制在 512 兆(megabytes)以内。如果你需要使用比这更大的空间，你可以使用多个 <code>key</code> 。</li>
+</ul>
+<p><img src="http://image.chengnanhuakai.com/image/blog/redis/String%20SETRANGE%E5%91%BD%E4%BB%A4.png-geekerit" alt=""></p>
+<hr>
+<h4 id="获取字符串子串"><a href="#获取字符串子串" class="headerlink" title="获取字符串子串"></a>获取字符串子串</h4><h5 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GETRANGE key start end</span><br></pre></td></tr></table></figure>
+<h5 id="作用-4"><a href="#作用-4" class="headerlink" title="作用"></a>作用</h5><ul>
+<li><p>返回 <code>key</code> 中字符串值的子字符串，字符串的截取范围由 <code>start</code> 和 <code>end</code> 两个偏移量决定(包括 <code>start</code> 和 <code>end</code> 在内)。</p>
+</li>
+<li><p>负数偏移量表示从字符串最后开始计数， <code>-1</code> 表示最后一个字符， <code>-2</code> 表示倒数第二个，以此类推。</p>
+</li>
+<li><p><a href="http://doc.redisfans.com/string/getrange.html#getrange" target="_blank" rel="noopener">GETRANGE</a> 通过保证子字符串的值域(range)不超过实际字符串的值域来处理超出范围的值域请求。</p>
+</li>
+</ul>
+<h5 id="注意事项-3"><a href="#注意事项-3" class="headerlink" title="注意事项"></a>注意事项</h5><p>​    该操作只支持正向获取子串，不支持回绕操作。例如，你可以获取从0-4下标的子串，但是不能获取从4-2下标的子串。</p>
+<p><img src="http://image.chengnanhuakai.com/image/blog/redis/String%20GETRANGE%E5%91%BD%E4%BB%A4.png-geekerit" alt=""></p>
+<hr>
+<h4 id="数值增减"><a href="#数值增减" class="headerlink" title="数值增减"></a>数值增减</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>语法</th>
+<th>作用</th>
+<th>注意事项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INCR</td>
+<td>INCR key</td>
+<td>将 <code>key</code> 中储存的数字值增一。</td>
+<td>如果 <code>key</code> 不存在，那么 <code>key</code> 的值会先被初始化为 <code>0</code> ，然后再执行 <a href="http://doc.redisfans.com/string/incr.html#incr" target="_blank" rel="noopener">INCR</a> 操作。如果值包含错误的类型，或字符串类型的值不能表示为数字，那么返回一个错误。本操作的值限制在 64 位(bit)有符号数字表示之内。</td>
+</tr>
+<tr>
+<td>INCRBY</td>
+<td>INCRBY key increment</td>
+<td>将 <code>key</code> 所储存的值加上增量 <code>increment</code> 。</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>INCRBYFLOAT</td>
+<td>INCRBYFLOAT key increment</td>
+<td>为 <code>key</code> 中所储存的值加上浮点数增量 <code>increment</code> 。</td>
+<td></td>
+</tr>
+<tr>
+<td>DECR</td>
+<td>DECR key</td>
+<td>将 <code>key</code> 中储存的数字值减一。</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>DECRBY</td>
+<td>DECRBY key decrement</td>
+<td>将 <code>key</code> 所储存的值减去减量 <code>decrement</code> 。</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<p><img src="http://image.chengnanhuakai.com/image/blog/redis/String%20%E5%A2%9E%E5%87%8F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4.png-geekerit" alt=""></p>
+<hr>
+<h2 id="String实战"><a href="#String实战" class="headerlink" title="String实战"></a>String实战</h2><ul>
+<li><p>get，set命令：常用于数据缓存，与关系型数据库结合使用，存储数据时同时存储在redis与关系型数据库，取值时首先从redis中进行获取，减少与数据库的交互，提高数据的访问速度。</p>
+</li>
+<li><p>setnx:常用于分布式锁，数据不存在时才新增</p>
+</li>
+<li><p>incr:秒杀场景</p>
+</li>
+<li><p>setbit:签到功能，权限分配等</p>
+</li>
+</ul>
+<p>​    </p>
 
       
     </div>
@@ -608,11 +687,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/运维/" rel="tag"># 运维</a>
-          
-            <a href="/tags/虚拟机/" rel="tag"># 虚拟机</a>
-          
-            <a href="/tags/Vmware/" rel="tag"># Vmware</a>
+            <a href="/tags/redis/" rel="tag"># redis</a>
           
         </div>
       
@@ -625,8 +700,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/11/2018-11-11-zookeeper客户端操作以及ACL权限控制/" rel="next" title="zookeeper客户端操作及ACL权限控制">
-                <i class="fa fa-chevron-left"></i> zookeeper客户端操作及ACL权限控制
+              <a href="/2018/12/15/2018-12-15-基于七牛云使用Springboot实现自己的免费图床/" rel="next" title="Springboot集成七牛云搭建自己的免费图床">
+                <i class="fa fa-chevron-left"></i> Springboot集成七牛云搭建自己的免费图床
               </a>
             
           </div>
@@ -634,10 +709,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/13/2018-12-13-springboot集成阿里云短信服务/" rel="prev" title="Springboot集成阿里云短信服务">
-                Springboot集成阿里云短信服务 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -858,7 +929,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理"><span class="nav-number">1.</span> <span class="nav-text">Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-首先需要安装虚拟机软件vmware："><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 首先需要安装虚拟机软件vmware：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-虚拟机的网络设置："><span class="nav-number">1.0.2.</span> <span class="nav-text">2.虚拟机的网络设置：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-查看自己的宿主机的网络配置，打开CMD输入ipconfig查看"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">1.查看自己的宿主机的网络配置，打开CMD输入ipconfig查看</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-在vmware中进行网络设置"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">2. 在vmware中进行网络设置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-点击编辑—虚拟网络编辑器；"><span class="nav-number">1.0.2.2.1.</span> <span class="nav-text">1.点击编辑—虚拟网络编辑器；</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-点击更改设置，设置子网IP的网段与宿主机的网段一致；如果宿主机IP为192-168-0-1，则子网IP设置为192-168-0-XXX即可；子网掩码保持默认即可-这样做的目的是为了之后使用远程连接工具管理虚拟机，如果直接使用vmware进行虚拟机的相关操作可以不用与宿主机的IP段保持一致-；注意使用本地的DHCP服务要取消勾选："><span class="nav-number">1.0.2.2.2.</span> <span class="nav-text">2.点击更改设置，设置子网IP的网段与宿主机的网段一致；如果宿主机IP为192.168.0.1，则子网IP设置为192.168.0.XXX即可；子网掩码保持默认即可(这样做的目的是为了之后使用远程连接工具管理虚拟机，如果直接使用vmware进行虚拟机的相关操作可以不用与宿主机的IP段保持一致)；注意使用本地的DHCP服务要取消勾选：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-点击NET设置，设置自己的网关IP进行记录，之后虚拟机中设置网络时需要；"><span class="nav-number">1.0.2.2.3.</span> <span class="nav-text">3.点击NET设置，设置自己的网关IP进行记录，之后虚拟机中设置网络时需要；</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-开始安装虚拟机："><span class="nav-number">1.0.3.</span> <span class="nav-text">3.开始安装虚拟机：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-创建虚拟机："><span class="nav-number">1.0.3.1.</span> <span class="nav-text">1.创建虚拟机：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-选择稍后安装系统；"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">2.选择稍后安装系统；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-选择要安装的linux的版本；"><span class="nav-number">1.0.3.3.</span> <span class="nav-text">3.选择要安装的linux的版本；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-选择要安装的位置并-定义虚拟机名称，一般我以IP进行命名方便进行集群操作，另外虚拟机的安装目录最好统一放在同一目录下；"><span class="nav-number">1.0.3.4.</span> <span class="nav-text">4.选择要安装的位置并 定义虚拟机名称，一般我以IP进行命名方便进行集群操作，另外虚拟机的安装目录最好统一放在同一目录下；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-磁盘大小一般选择默认即可；"><span class="nav-number">1.0.3.5.</span> <span class="nav-text">5.磁盘大小一般选择默认即可；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-选择要安装的操作系统；"><span class="nav-number">1.0.3.6.</span> <span class="nav-text">6.选择要安装的操作系统；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-跳过系统检测开始进行系统安装；"><span class="nav-number">1.0.3.7.</span> <span class="nav-text">7.跳过系统检测开始进行系统安装；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-设置系统的时区以及要支持的语言；"><span class="nav-number">1.0.3.8.</span> <span class="nav-text">8.设置系统的时区以及要支持的语言；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-设置系统网络"><span class="nav-number">1.0.3.9.</span> <span class="nav-text">9.设置系统网络;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-设置root用户的登录密码；"><span class="nav-number">1.0.3.10.</span> <span class="nav-text">10.设置root用户的登录密码；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-添加普通用户并设置登录密码，可略过；"><span class="nav-number">1.0.3.11.</span> <span class="nav-text">11.添加普通用户并设置登录密码，可略过；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-等待系统安装完成进行重启；"><span class="nav-number">1.0.3.12.</span> <span class="nav-text">12.等待系统安装完成进行重启；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-登录系统查看网络信息"><span class="nav-number">1.0.3.13.</span> <span class="nav-text">13.登录系统查看网络信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-修改网络信息配置文件，设置静态IP"><span class="nav-number">1.0.3.14.</span> <span class="nav-text">14.修改网络信息配置文件，设置静态IP</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#redis基础学习"><span class="nav-number">1.</span> <span class="nav-text">redis基础学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介安装"><span class="nav-number">1.1.</span> <span class="nav-text">简介安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用场景"><span class="nav-number">1.1.2.</span> <span class="nav-text">常用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.3.</span> <span class="nav-text">安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构"><span class="nav-number">1.2.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#String"><span class="nav-number">1.2.1.</span> <span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#set操作"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">set操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#语法"><span class="nav-number">1.2.1.1.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#作用"><span class="nav-number">1.2.1.1.2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#注意事项"><span class="nav-number">1.2.1.1.3.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#常用操作"><span class="nav-number">1.2.1.1.4.</span> <span class="nav-text">常用操作</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取字符串长度"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">获取字符串长度</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#语法-1"><span class="nav-number">1.2.1.2.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#作用-1"><span class="nav-number">1.2.1.2.2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#注意事项-1"><span class="nav-number">1.2.1.2.3.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串追加"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">字符串追加</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#语法-2"><span class="nav-number">1.2.1.3.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#作用-2"><span class="nav-number">1.2.1.3.2.</span> <span class="nav-text">作用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串覆盖"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">字符串覆盖</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#语法-3"><span class="nav-number">1.2.1.4.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#作用-3"><span class="nav-number">1.2.1.4.2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#注意事项-2"><span class="nav-number">1.2.1.4.3.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取字符串子串"><span class="nav-number">1.2.1.5.</span> <span class="nav-text">获取字符串子串</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#语法-4"><span class="nav-number">1.2.1.5.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#作用-4"><span class="nav-number">1.2.1.5.2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#注意事项-3"><span class="nav-number">1.2.1.5.3.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数值增减"><span class="nav-number">1.2.1.6.</span> <span class="nav-text">数值增减</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String实战"><span class="nav-number">1.3.</span> <span class="nav-text">String实战</span></a></li></ol></li></ol></div>
             
 
           </div>
