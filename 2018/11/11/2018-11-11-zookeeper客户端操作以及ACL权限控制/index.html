@@ -96,13 +96,13 @@
 
 
 
-  <meta name="description" content="zookeeper客户端操作及ACL权限控制简介作用： 中间件 ，提供协调服务 作用于分布式系统，为大数据服务 支持java  什么是分布式系统： 多台计算机组成整体，一致对外处理同一请求 内部计算机相互通信 客户端到服务端一次请求到响应结束历经多台计算机  分布式系统瓶颈 一致性：数据一致性，数据分批入库 原子性：不会局部化 单一视图：数据一致 可靠性：每次对ZK操作都保存在服务端 实时性：客户">
+  <meta name="description" content="zookeeper客户端操作及ACL权限控制简介作用： 中间件 ，提供协调服务 作用于分布式系统，为大数据服务 支持java  什么是分布式系统： 多台计算机组成整体，一致对外处理同一请求 内部计算机相互通信 客户端到服务端一次请求到响应结束历经多台计算机">
 <meta name="keywords" content="运维,zookeeper">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zookeeper客户端操作及ACL权限控制">
 <meta property="og:url" content="http://yoursite.com/2018/11/11/2018-11-11-zookeeper客户端操作以及ACL权限控制/index.html">
 <meta property="og:site_name" content="GeekerHub">
-<meta property="og:description" content="zookeeper客户端操作及ACL权限控制简介作用： 中间件 ，提供协调服务 作用于分布式系统，为大数据服务 支持java  什么是分布式系统： 多台计算机组成整体，一致对外处理同一请求 内部计算机相互通信 客户端到服务端一次请求到响应结束历经多台计算机  分布式系统瓶颈 一致性：数据一致性，数据分批入库 原子性：不会局部化 单一视图：数据一致 可靠性：每次对ZK操作都保存在服务端 实时性：客户">
+<meta property="og:description" content="zookeeper客户端操作及ACL权限控制简介作用： 中间件 ，提供协调服务 作用于分布式系统，为大数据服务 支持java  什么是分布式系统： 多台计算机组成整体，一致对外处理同一请求 内部计算机相互通信 客户端到服务端一次请求到响应结束历经多台计算机">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/zookeeper/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%99%BB%E5%BD%95.png-geekerit">
 <meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/zookeeper/ls%E6%9F%A5%E7%9C%8B%E6%9F%90%E8%8A%82%E7%82%B9%E7%9A%84%E4%BF%A1%E6%81%AF.png-geekerit">
@@ -123,10 +123,10 @@
 <meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/zookeeper/ACL/ACL%E6%9D%83%E9%99%90--digest-%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE.png-geekerit">
 <meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/zookeeper/ACL/ACL%E6%9D%83%E9%99%90--auth-%E7%A4%BA%E4%BE%8B.png-geekerit">
 <meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/zookeeper/ACL/ACL%E6%9D%83%E9%99%90--auth-%E7%A4%BA%E4%BE%8B.png-geekerit">
-<meta property="og:updated_time" content="2019-01-04T14:56:54.792Z">
+<meta property="og:updated_time" content="2019-01-06T07:11:38.756Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zookeeper客户端操作及ACL权限控制">
-<meta name="twitter:description" content="zookeeper客户端操作及ACL权限控制简介作用： 中间件 ，提供协调服务 作用于分布式系统，为大数据服务 支持java  什么是分布式系统： 多台计算机组成整体，一致对外处理同一请求 内部计算机相互通信 客户端到服务端一次请求到响应结束历经多台计算机  分布式系统瓶颈 一致性：数据一致性，数据分批入库 原子性：不会局部化 单一视图：数据一致 可靠性：每次对ZK操作都保存在服务端 实时性：客户">
+<meta name="twitter:description" content="zookeeper客户端操作及ACL权限控制简介作用： 中间件 ，提供协调服务 作用于分布式系统，为大数据服务 支持java  什么是分布式系统： 多台计算机组成整体，一致对外处理同一请求 内部计算机相互通信 客户端到服务端一次请求到响应结束历经多台计算机">
 <meta name="twitter:image" content="http://image.chengnanhuakai.com/image/blog/zookeeper/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%99%BB%E5%BD%95.png-geekerit">
 
 
@@ -536,6 +536,7 @@
 <li>内部计算机相互通信</li>
 <li>客户端到服务端一次请求到响应结束历经多台计算机</li>
 </ul>
+<a id="more"></a>
 <h5 id="分布式系统瓶颈"><a href="#分布式系统瓶颈" class="headerlink" title="分布式系统瓶颈"></a>分布式系统瓶颈</h5><ul>
 <li>一致性：数据一致性，数据分批入库</li>
 <li>原子性：不会局部化</li>

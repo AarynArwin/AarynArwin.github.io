@@ -96,21 +96,21 @@
 
 
 
-  <meta name="description" content="centos7安装配置redis4安装redis安装编译环境1yum install gcc-c++ 下载上传redis源码安装包 redis官网链接  redis4网盘链接   解压文件1tar -xzvf redis-4.0.2.tar.gz 编译redis12341. cd 至解压完的redis目录下cd redis-4.0.22. 进行编译make 安装redis412PREFIX:安装r">
+  <meta name="description" content="centos7安装配置redis4安装redis安装编译环境1yum install gcc-c++ 下载上传redis源码安装包 redis官网链接  redis4网盘链接   解压文件1tar -xzvf redis-4.0.2.tar.gz 编译redis12341. cd 至解压完的redis目录下cd redis-4.0.22. 进行编译make">
 <meta name="keywords" content="环境配置,redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="centos7安装配置redis4">
 <meta property="og:url" content="http://yoursite.com/2018/11/03/2018-11-03-centos7安装配置redis4/index.html">
 <meta property="og:site_name" content="GeekerHub">
-<meta property="og:description" content="centos7安装配置redis4安装redis安装编译环境1yum install gcc-c++ 下载上传redis源码安装包 redis官网链接  redis4网盘链接   解压文件1tar -xzvf redis-4.0.2.tar.gz 编译redis12341. cd 至解压完的redis目录下cd redis-4.0.22. 进行编译make 安装redis412PREFIX:安装r">
+<meta property="og:description" content="centos7安装配置redis4安装redis安装编译环境1yum install gcc-c++ 下载上传redis源码安装包 redis官网链接  redis4网盘链接   解压文件1tar -xzvf redis-4.0.2.tar.gz 编译redis12341. cd 至解压完的redis目录下cd redis-4.0.22. 进行编译make">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/redis/%E7%BD%91%E5%8D%A1%E5%9C%B0%E5%9D%80.png">
 <meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/redis/redis%E5%A4%9A%E4%B8%AAip%E7%BB%91%E5%AE%9A.png">
 <meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/redis/redis%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95.png">
-<meta property="og:updated_time" content="2019-01-04T15:03:33.272Z">
+<meta property="og:updated_time" content="2019-01-06T07:10:25.728Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos7安装配置redis4">
-<meta name="twitter:description" content="centos7安装配置redis4安装redis安装编译环境1yum install gcc-c++ 下载上传redis源码安装包 redis官网链接  redis4网盘链接   解压文件1tar -xzvf redis-4.0.2.tar.gz 编译redis12341. cd 至解压完的redis目录下cd redis-4.0.22. 进行编译make 安装redis412PREFIX:安装r">
+<meta name="twitter:description" content="centos7安装配置redis4安装redis安装编译环境1yum install gcc-c++ 下载上传redis源码安装包 redis官网链接  redis4网盘链接   解压文件1tar -xzvf redis-4.0.2.tar.gz 编译redis12341. cd 至解压完的redis目录下cd redis-4.0.22. 进行编译make">
 <meta name="twitter:image" content="http://image.chengnanhuakai.com/image/blog/redis/%E7%BD%91%E5%8D%A1%E5%9C%B0%E5%9D%80.png">
 
 
@@ -519,6 +519,7 @@
 </ul>
 <h4 id="解压文件"><a href="#解压文件" class="headerlink" title="解压文件"></a>解压文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf redis-4.0.2.tar.gz</span><br></pre></td></tr></table></figure>
 <h4 id="编译redis"><a href="#编译redis" class="headerlink" title="编译redis"></a>编译redis</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. cd 至解压完的redis目录下</span><br><span class="line">cd redis-4.0.2</span><br><span class="line">2. 进行编译</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h4 id="安装redis4"><a href="#安装redis4" class="headerlink" title="安装redis4"></a>安装redis4</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PREFIX:安装redis到指定文件夹下</span><br><span class="line">make PREFIX=/usr/local/redis install</span><br></pre></td></tr></table></figure>
 <h4 id="复制redis目录下的redis-conf文件到上一级目录的bin目录下并修改相关配置"><a href="#复制redis目录下的redis-conf文件到上一级目录的bin目录下并修改相关配置" class="headerlink" title="复制redis目录下的redis.conf文件到上一级目录的bin目录下并修改相关配置"></a>复制redis目录下的redis.conf文件到上一级目录的bin目录下并修改相关配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 查看自己的服务器网卡地址</span><br><span class="line">ifconfig</span><br><span class="line">2. 修改bind的地址为上述查询网卡地址，注意这里不是设置你请求redis的IP地址，而是设置自己的服务器的网卡地址，同时不建议为了省事将bind地址设置为0.0.0.0，增加自己的服务器风险</span><br></pre></td></tr></table></figure>
 <p><img src="http://image.chengnanhuakai.com/image/blog/redis/%E7%BD%91%E5%8D%A1%E5%9C%B0%E5%9D%80.png" alt="ifconfig"></p>

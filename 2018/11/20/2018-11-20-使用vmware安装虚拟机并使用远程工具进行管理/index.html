@@ -96,40 +96,40 @@
 
 
 
-  <meta name="description" content="Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理1. 首先需要安装虚拟机软件vmware：官网链接 2.虚拟机的网络设置：1.查看自己的宿主机的网络配置，打开CMD输入ipconfig查看 2. 在vmware中进行网络设置1.点击编辑—虚拟网络编辑器；2.点击更改设置，设置子网IP的网段与宿主机的网段一致；如果宿主机IP为192.168.0.1，则子网IP设置为192.1">
+  <meta name="description" content="Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理1. 首先需要安装虚拟机软件vmware：官网链接 2.虚拟机的网络设置：1.查看自己的宿主机的网络配置，打开CMD输入ipconfig查看 2. 在vmware中进行网络设置1.点击编辑—虚拟网络编辑器；">
 <meta name="keywords" content="运维,虚拟机,Vmware">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理">
 <meta property="og:url" content="http://yoursite.com/2018/11/20/2018-11-20-使用vmware安装虚拟机并使用远程工具进行管理/index.html">
 <meta property="og:site_name" content="GeekerHub">
-<meta property="og:description" content="Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理1. 首先需要安装虚拟机软件vmware：官网链接 2.虚拟机的网络设置：1.查看自己的宿主机的网络配置，打开CMD输入ipconfig查看 2. 在vmware中进行网络设置1.点击编辑—虚拟网络编辑器；2.点击更改设置，设置子网IP的网段与宿主机的网段一致；如果宿主机IP为192.168.0.1，则子网IP设置为192.1">
+<meta property="og:description" content="Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理1. 首先需要安装虚拟机软件vmware：官网链接 2.虚拟机的网络设置：1.查看自己的宿主机的网络配置，打开CMD输入ipconfig查看 2. 在vmware中进行网络设置1.点击编辑—虚拟网络编辑器；">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/21.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/18%E6%9B%B4%E6%94%B9%E8%AE%BE%E7%BD%AE.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/19.png">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/21.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/18%E6%9B%B4%E6%94%B9%E8%AE%BE%E7%BD%AE.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/19.png-geekerit">
 <meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/20%E8%AE%BE%E7%BD%AE%E7%BD%91%E5%85%B3%E5%9C%B0%E5%9D%80.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/2%E7%A8%8D%E5%90%8E%E5%AE%89%E8%A3%85%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/3%E9%80%89%E6%8B%A9%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/4%E8%AE%BE%E7%BD%AE%E5%90%8D%E7%A7%B0.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/5%E8%AE%BE%E7%BD%AE%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8F.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/7%E9%80%89%E6%8B%A9%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/8.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/9%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/11.1%E8%B0%83%E6%95%B4%E6%97%B6%E9%97%B4%E4%B8%8E%E8%AF%AD%E8%A8%80.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/11.2%E7%BD%91%E7%BB%9C.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/13%E8%AE%BE%E7%BD%AEroot%E5%AF%86%E7%A0%81.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/14%E6%B7%BB%E5%8A%A0%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/15%E9%87%8D%E5%90%AF%E7%B3%BB%E7%BB%9F.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/16%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/17%E7%BC%96%E8%BE%91%E7%BD%91%E7%BB%9C.png">
-<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE.png">
-<meta property="og:updated_time" content="2019-01-04T15:03:34.023Z">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/2%E7%A8%8D%E5%90%8E%E5%AE%89%E8%A3%85%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/3%E9%80%89%E6%8B%A9%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/4%E8%AE%BE%E7%BD%AE%E5%90%8D%E7%A7%B0.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/5%E8%AE%BE%E7%BD%AE%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8F.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/7%E9%80%89%E6%8B%A9%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/8.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/9%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/11.1%E8%B0%83%E6%95%B4%E6%97%B6%E9%97%B4%E4%B8%8E%E8%AF%AD%E8%A8%80.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/11.2%E7%BD%91%E7%BB%9C.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/13%E8%AE%BE%E7%BD%AEroot%E5%AF%86%E7%A0%81.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/14%E6%B7%BB%E5%8A%A0%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/15%E9%87%8D%E5%90%AF%E7%B3%BB%E7%BB%9F.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/16%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/17%E7%BC%96%E8%BE%91%E7%BD%91%E7%BB%9C.png-geekerit">
+<meta property="og:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE.png-geekerit">
+<meta property="og:updated_time" content="2019-01-06T07:14:48.098Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理">
-<meta name="twitter:description" content="Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理1. 首先需要安装虚拟机软件vmware：官网链接 2.虚拟机的网络设置：1.查看自己的宿主机的网络配置，打开CMD输入ipconfig查看 2. 在vmware中进行网络设置1.点击编辑—虚拟网络编辑器；2.点击更改设置，设置子网IP的网段与宿主机的网段一致；如果宿主机IP为192.168.0.1，则子网IP设置为192.1">
-<meta name="twitter:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/21.png">
+<meta name="twitter:description" content="Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理1. 首先需要安装虚拟机软件vmware：官网链接 2.虚拟机的网络设置：1.查看自己的宿主机的网络配置，打开CMD输入ipconfig查看 2. 在vmware中进行网络设置1.点击编辑—虚拟网络编辑器；">
+<meta name="twitter:image" content="http://image.chengnanhuakai.com/image/blog/vmware/centos/21.png-geekerit">
 
 
 
@@ -529,33 +529,34 @@
 
       
         <h1 id="Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理"><a href="#Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理" class="headerlink" title="Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理"></a>Windows中使用vmware搭建虚拟机并使用远程连接工具进行统一管理</h1><h3 id="1-首先需要安装虚拟机软件vmware："><a href="#1-首先需要安装虚拟机软件vmware：" class="headerlink" title="1. 首先需要安装虚拟机软件vmware："></a>1. 首先需要安装虚拟机软件vmware：</h3><p><a href="https://www.vmware.com/" target="_blank" rel="noopener">官网链接</a></p>
-<h3 id="2-虚拟机的网络设置："><a href="#2-虚拟机的网络设置：" class="headerlink" title="2.虚拟机的网络设置："></a>2.虚拟机的网络设置：</h3><h4 id="1-查看自己的宿主机的网络配置，打开CMD输入ipconfig查看"><a href="#1-查看自己的宿主机的网络配置，打开CMD输入ipconfig查看" class="headerlink" title="1.查看自己的宿主机的网络配置，打开CMD输入ipconfig查看"></a>1.查看自己的宿主机的网络配置，打开CMD输入ipconfig查看</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/21.png" alt=""></p>
-<h4 id="2-在vmware中进行网络设置"><a href="#2-在vmware中进行网络设置" class="headerlink" title="2. 在vmware中进行网络设置"></a>2. 在vmware中进行网络设置</h4><h5 id="1-点击编辑—虚拟网络编辑器；"><a href="#1-点击编辑—虚拟网络编辑器；" class="headerlink" title="1.点击编辑—虚拟网络编辑器；"></a>1.点击编辑—虚拟网络编辑器；</h5><h5 id="2-点击更改设置，设置子网IP的网段与宿主机的网段一致；如果宿主机IP为192-168-0-1，则子网IP设置为192-168-0-XXX即可；子网掩码保持默认即可-这样做的目的是为了之后使用远程连接工具管理虚拟机，如果直接使用vmware进行虚拟机的相关操作可以不用与宿主机的IP段保持一致-；注意使用本地的DHCP服务要取消勾选："><a href="#2-点击更改设置，设置子网IP的网段与宿主机的网段一致；如果宿主机IP为192-168-0-1，则子网IP设置为192-168-0-XXX即可；子网掩码保持默认即可-这样做的目的是为了之后使用远程连接工具管理虚拟机，如果直接使用vmware进行虚拟机的相关操作可以不用与宿主机的IP段保持一致-；注意使用本地的DHCP服务要取消勾选：" class="headerlink" title="2.点击更改设置，设置子网IP的网段与宿主机的网段一致；如果宿主机IP为192.168.0.1，则子网IP设置为192.168.0.XXX即可；子网掩码保持默认即可(这样做的目的是为了之后使用远程连接工具管理虚拟机，如果直接使用vmware进行虚拟机的相关操作可以不用与宿主机的IP段保持一致)；注意使用本地的DHCP服务要取消勾选："></a>2.点击更改设置，设置子网IP的网段与宿主机的网段一致；如果宿主机IP为192.168.0.1，则子网IP设置为192.168.0.XXX即可；子网掩码保持默认即可(这样做的目的是为了之后使用远程连接工具管理虚拟机，如果直接使用vmware进行虚拟机的相关操作可以不用与宿主机的IP段保持一致)；注意使用本地的DHCP服务要取消勾选：</h5><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/18%E6%9B%B4%E6%94%B9%E8%AE%BE%E7%BD%AE.png" alt=""></p>
-<p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/19.png" alt=""></p>
+<h3 id="2-虚拟机的网络设置："><a href="#2-虚拟机的网络设置：" class="headerlink" title="2.虚拟机的网络设置："></a>2.虚拟机的网络设置：</h3><h4 id="1-查看自己的宿主机的网络配置，打开CMD输入ipconfig查看"><a href="#1-查看自己的宿主机的网络配置，打开CMD输入ipconfig查看" class="headerlink" title="1.查看自己的宿主机的网络配置，打开CMD输入ipconfig查看"></a>1.查看自己的宿主机的网络配置，打开CMD输入ipconfig查看</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/21.png-geekerit" alt=""></p>
+<h4 id="2-在vmware中进行网络设置"><a href="#2-在vmware中进行网络设置" class="headerlink" title="2. 在vmware中进行网络设置"></a>2. 在vmware中进行网络设置</h4><h5 id="1-点击编辑—虚拟网络编辑器；"><a href="#1-点击编辑—虚拟网络编辑器；" class="headerlink" title="1.点击编辑—虚拟网络编辑器；"></a>1.点击编辑—虚拟网络编辑器；</h5><a id="more"></a>
+<h5 id="2-点击更改设置，设置子网IP的网段与宿主机的网段一致；如果宿主机IP为192-168-0-1，则子网IP设置为192-168-0-XXX即可；子网掩码保持默认即可-这样做的目的是为了之后使用远程连接工具管理虚拟机，如果直接使用vmware进行虚拟机的相关操作可以不用与宿主机的IP段保持一致-；注意使用本地的DHCP服务要取消勾选："><a href="#2-点击更改设置，设置子网IP的网段与宿主机的网段一致；如果宿主机IP为192-168-0-1，则子网IP设置为192-168-0-XXX即可；子网掩码保持默认即可-这样做的目的是为了之后使用远程连接工具管理虚拟机，如果直接使用vmware进行虚拟机的相关操作可以不用与宿主机的IP段保持一致-；注意使用本地的DHCP服务要取消勾选：" class="headerlink" title="2.点击更改设置，设置子网IP的网段与宿主机的网段一致；如果宿主机IP为192.168.0.1，则子网IP设置为192.168.0.XXX即可；子网掩码保持默认即可(这样做的目的是为了之后使用远程连接工具管理虚拟机，如果直接使用vmware进行虚拟机的相关操作可以不用与宿主机的IP段保持一致)；注意使用本地的DHCP服务要取消勾选："></a>2.点击更改设置，设置子网IP的网段与宿主机的网段一致；如果宿主机IP为192.168.0.1，则子网IP设置为192.168.0.XXX即可；子网掩码保持默认即可(这样做的目的是为了之后使用远程连接工具管理虚拟机，如果直接使用vmware进行虚拟机的相关操作可以不用与宿主机的IP段保持一致)；注意使用本地的DHCP服务要取消勾选：</h5><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/18%E6%9B%B4%E6%94%B9%E8%AE%BE%E7%BD%AE.png-geekerit" alt=""></p>
+<p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/19.png-geekerit" alt=""></p>
 <h5 id="3-点击NET设置，设置自己的网关IP进行记录，之后虚拟机中设置网络时需要；"><a href="#3-点击NET设置，设置自己的网关IP进行记录，之后虚拟机中设置网络时需要；" class="headerlink" title="3.点击NET设置，设置自己的网关IP进行记录，之后虚拟机中设置网络时需要；"></a>3.点击NET设置，设置自己的网关IP进行记录，之后虚拟机中设置网络时需要；</h5><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/20%E8%AE%BE%E7%BD%AE%E7%BD%91%E5%85%B3%E5%9C%B0%E5%9D%80.png" alt=""></p>
-<h3 id="3-开始安装虚拟机："><a href="#3-开始安装虚拟机：" class="headerlink" title="3.开始安装虚拟机："></a>3.开始安装虚拟机：</h3><h4 id="1-创建虚拟机："><a href="#1-创建虚拟机：" class="headerlink" title="1.创建虚拟机："></a>1.创建虚拟机：</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA.png" alt=""></p>
-<h4 id="2-选择稍后安装系统；"><a href="#2-选择稍后安装系统；" class="headerlink" title="2.选择稍后安装系统；"></a>2.选择稍后安装系统；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/2%E7%A8%8D%E5%90%8E%E5%AE%89%E8%A3%85%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.png" alt=""></p>
-<h4 id="3-选择要安装的linux的版本；"><a href="#3-选择要安装的linux的版本；" class="headerlink" title="3.选择要安装的linux的版本；"></a>3.选择要安装的linux的版本；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/3%E9%80%89%E6%8B%A9%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC.png" alt=""></p>
-<h4 id="4-选择要安装的位置并-定义虚拟机名称，一般我以IP进行命名方便进行集群操作，另外虚拟机的安装目录最好统一放在同一目录下；"><a href="#4-选择要安装的位置并-定义虚拟机名称，一般我以IP进行命名方便进行集群操作，另外虚拟机的安装目录最好统一放在同一目录下；" class="headerlink" title="4.选择要安装的位置并 定义虚拟机名称，一般我以IP进行命名方便进行集群操作，另外虚拟机的安装目录最好统一放在同一目录下；"></a>4.选择要安装的位置并 定义虚拟机名称，一般我以IP进行命名方便进行集群操作，另外虚拟机的安装目录最好统一放在同一目录下；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/4%E8%AE%BE%E7%BD%AE%E5%90%8D%E7%A7%B0.png" alt=""></p>
-<h4 id="5-磁盘大小一般选择默认即可；"><a href="#5-磁盘大小一般选择默认即可；" class="headerlink" title="5.磁盘大小一般选择默认即可；"></a>5.磁盘大小一般选择默认即可；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/5%E8%AE%BE%E7%BD%AE%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8F.png" alt=""></p>
-<h4 id="6-选择要安装的操作系统；"><a href="#6-选择要安装的操作系统；" class="headerlink" title="6.选择要安装的操作系统；"></a>6.选择要安装的操作系统；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/7%E9%80%89%E6%8B%A9%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F.png" alt=""></p>
-<p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/8.png" alt="8"></p>
-<h4 id="7-跳过系统检测开始进行系统安装；"><a href="#7-跳过系统检测开始进行系统安装；" class="headerlink" title="7.跳过系统检测开始进行系统安装；"></a>7.跳过系统检测开始进行系统安装；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/9%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85.png" alt=""></p>
-<h4 id="8-设置系统的时区以及要支持的语言；"><a href="#8-设置系统的时区以及要支持的语言；" class="headerlink" title="8.设置系统的时区以及要支持的语言；"></a>8.设置系统的时区以及要支持的语言；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/11.1%E8%B0%83%E6%95%B4%E6%97%B6%E9%97%B4%E4%B8%8E%E8%AF%AD%E8%A8%80.png" alt=""></p>
-<h4 id="9-设置系统网络"><a href="#9-设置系统网络" class="headerlink" title="9.设置系统网络;"></a>9.设置系统网络;</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/11.2%E7%BD%91%E7%BB%9C.png" alt=""></p>
+<h3 id="3-开始安装虚拟机："><a href="#3-开始安装虚拟机：" class="headerlink" title="3.开始安装虚拟机："></a>3.开始安装虚拟机：</h3><h4 id="1-创建虚拟机："><a href="#1-创建虚拟机：" class="headerlink" title="1.创建虚拟机："></a>1.创建虚拟机：</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA.png-geekerit" alt=""></p>
+<h4 id="2-选择稍后安装系统；"><a href="#2-选择稍后安装系统；" class="headerlink" title="2.选择稍后安装系统；"></a>2.选择稍后安装系统；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/2%E7%A8%8D%E5%90%8E%E5%AE%89%E8%A3%85%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.png-geekerit" alt=""></p>
+<h4 id="3-选择要安装的linux的版本；"><a href="#3-选择要安装的linux的版本；" class="headerlink" title="3.选择要安装的linux的版本；"></a>3.选择要安装的linux的版本；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/3%E9%80%89%E6%8B%A9%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC.png-geekerit" alt=""></p>
+<h4 id="4-选择要安装的位置并-定义虚拟机名称，一般我以IP进行命名方便进行集群操作，另外虚拟机的安装目录最好统一放在同一目录下；"><a href="#4-选择要安装的位置并-定义虚拟机名称，一般我以IP进行命名方便进行集群操作，另外虚拟机的安装目录最好统一放在同一目录下；" class="headerlink" title="4.选择要安装的位置并 定义虚拟机名称，一般我以IP进行命名方便进行集群操作，另外虚拟机的安装目录最好统一放在同一目录下；"></a>4.选择要安装的位置并 定义虚拟机名称，一般我以IP进行命名方便进行集群操作，另外虚拟机的安装目录最好统一放在同一目录下；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/4%E8%AE%BE%E7%BD%AE%E5%90%8D%E7%A7%B0.png-geekerit" alt=""></p>
+<h4 id="5-磁盘大小一般选择默认即可；"><a href="#5-磁盘大小一般选择默认即可；" class="headerlink" title="5.磁盘大小一般选择默认即可；"></a>5.磁盘大小一般选择默认即可；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/5%E8%AE%BE%E7%BD%AE%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8F.png-geekerit" alt=""></p>
+<h4 id="6-选择要安装的操作系统；"><a href="#6-选择要安装的操作系统；" class="headerlink" title="6.选择要安装的操作系统；"></a>6.选择要安装的操作系统；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/7%E9%80%89%E6%8B%A9%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F.png-geekerit" alt=""></p>
+<p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/8.png-geekerit" alt="8"></p>
+<h4 id="7-跳过系统检测开始进行系统安装；"><a href="#7-跳过系统检测开始进行系统安装；" class="headerlink" title="7.跳过系统检测开始进行系统安装；"></a>7.跳过系统检测开始进行系统安装；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/9%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85.png-geekerit" alt=""></p>
+<h4 id="8-设置系统的时区以及要支持的语言；"><a href="#8-设置系统的时区以及要支持的语言；" class="headerlink" title="8.设置系统的时区以及要支持的语言；"></a>8.设置系统的时区以及要支持的语言；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/11.1%E8%B0%83%E6%95%B4%E6%97%B6%E9%97%B4%E4%B8%8E%E8%AF%AD%E8%A8%80.png-geekerit" alt=""></p>
+<h4 id="9-设置系统网络"><a href="#9-设置系统网络" class="headerlink" title="9.设置系统网络;"></a>9.设置系统网络;</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/11.2%E7%BD%91%E7%BB%9C.png-geekerit" alt=""></p>
 <p>选择IPV4 Settings–method，选择Manual,Address输入要设置的虚拟机IP，只要与上述自己设置的网关的IP段保持一致即可，Netmask为上述的子网掩码，Gateway为上述自己设置的网关地址，输入完成点击save进行保存：</p>
-<p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE.png" alt=""></p>
-<h4 id="10-设置root用户的登录密码；"><a href="#10-设置root用户的登录密码；" class="headerlink" title="10.设置root用户的登录密码；"></a>10.设置root用户的登录密码；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/13%E8%AE%BE%E7%BD%AEroot%E5%AF%86%E7%A0%81.png" alt=""></p>
-<h4 id="11-添加普通用户并设置登录密码，可略过；"><a href="#11-添加普通用户并设置登录密码，可略过；" class="headerlink" title="11.添加普通用户并设置登录密码，可略过；"></a>11.添加普通用户并设置登录密码，可略过；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/14%E6%B7%BB%E5%8A%A0%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7.png" alt=""></p>
-<h4 id="12-等待系统安装完成进行重启；"><a href="#12-等待系统安装完成进行重启；" class="headerlink" title="12.等待系统安装完成进行重启；"></a>12.等待系统安装完成进行重启；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/15%E9%87%8D%E5%90%AF%E7%B3%BB%E7%BB%9F.png" alt=""></p>
+<p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE.png-geekerit" alt=""></p>
+<h4 id="10-设置root用户的登录密码；"><a href="#10-设置root用户的登录密码；" class="headerlink" title="10.设置root用户的登录密码；"></a>10.设置root用户的登录密码；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/13%E8%AE%BE%E7%BD%AEroot%E5%AF%86%E7%A0%81.png-geekerit" alt=""></p>
+<h4 id="11-添加普通用户并设置登录密码，可略过；"><a href="#11-添加普通用户并设置登录密码，可略过；" class="headerlink" title="11.添加普通用户并设置登录密码，可略过；"></a>11.添加普通用户并设置登录密码，可略过；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/14%E6%B7%BB%E5%8A%A0%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7.png-geekerit" alt=""></p>
+<h4 id="12-等待系统安装完成进行重启；"><a href="#12-等待系统安装完成进行重启；" class="headerlink" title="12.等待系统安装完成进行重启；"></a>12.等待系统安装完成进行重启；</h4><p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/15%E9%87%8D%E5%90%AF%E7%B3%BB%E7%BB%9F.png-geekerit" alt=""></p>
 <h4 id="13-登录系统查看网络信息"><a href="#13-登录系统查看网络信息" class="headerlink" title="13.登录系统查看网络信息"></a>13.登录系统查看网络信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
 <p>![(C:\Users\15927\Pictures\学习\开发环境\虚拟机\17编辑网络.png)</p>
-<p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/16%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F.png" alt="16登录系统"></p>
-<p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/17%E7%BC%96%E8%BE%91%E7%BD%91%E7%BB%9C.png" alt=""></p>
+<p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/16%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F.png-geekerit" alt="16登录系统"></p>
+<p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/17%E7%BC%96%E8%BE%91%E7%BD%91%E7%BB%9C.png-geekerit" alt=""></p>
 <h4 id="14-修改网络信息配置文件，设置静态IP"><a href="#14-修改网络信息配置文件，设置静态IP" class="headerlink" title="14.修改网络信息配置文件，设置静态IP"></a>14.修改网络信息配置文件，设置静态IP</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br><span class="line">上述的文件名称根据自己的网卡名称编写</span><br></pre></td></tr></table></figure>
 <p>个人配置信息参考：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">TYPE=&quot;Ethernet&quot;</span><br><span class="line">PROXY_METHOD=&quot;none&quot;</span><br><span class="line">BROWSER_ONLY=&quot;no&quot;</span><br><span class="line">BOOTPROTO=&quot;static&quot;</span><br><span class="line">DEFROUTE=&quot;yes&quot;</span><br><span class="line">IPV4_FAILURE_FATAL=&quot;no&quot;</span><br><span class="line">IPV6INIT=&quot;yes&quot;</span><br><span class="line">IPV6_AUTOCONF=&quot;yes&quot;</span><br><span class="line">IPV6_DEFROUTE=&quot;yes&quot;</span><br><span class="line">IPV6_FAILURE_FATAL=&quot;no&quot;</span><br><span class="line">IPV6_ADDR_GEN_MODE=&quot;stable-privacy&quot;</span><br><span class="line">NAME=&quot;ens33&quot;</span><br><span class="line">UUID=&quot;cf0e2c3c-8afe-47a3-96d0-59cc57ad1b14&quot;</span><br><span class="line">DEVICE=&quot;ens33&quot;</span><br><span class="line">ONBOOT=&quot;yes&quot;</span><br><span class="line">IPADDR=&quot;192.168.0.5&quot;</span><br><span class="line">PREFIX=&quot;24&quot;</span><br><span class="line">GATEWAY=&quot;192.168.0.100&quot;</span><br><span class="line">DNS1=8.8.8.8</span><br><span class="line">DNS2=&quot;192.168.0.100&quot;</span><br><span class="line">IPV6_PRIVACY=&quot;no&quot;</span><br></pre></td></tr></table></figure>
-<p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE.png" alt=""></p>
+<p><img src="http://image.chengnanhuakai.com/image/blog/vmware/centos/%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE.png-geekerit" alt=""></p>
 
       
     </div>

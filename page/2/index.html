@@ -509,8 +509,7 @@
 
       
         
-          
-            <h1 id="centos7安装配置redis4"><a href="#centos7安装配置redis4" class="headerlink" title="centos7安装配置redis4"></a>centos7安装配置redis4</h1><h4 id="安装redis安装编译环境"><a href="#安装redis安装编译环境" class="headerlink" title="安装redis安装编译环境"></a>安装redis安装编译环境</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install gcc-c++</span><br></pre></td></tr></table></figure>
+          <h1 id="centos7安装配置redis4"><a href="#centos7安装配置redis4" class="headerlink" title="centos7安装配置redis4"></a>centos7安装配置redis4</h1><h4 id="安装redis安装编译环境"><a href="#安装redis安装编译环境" class="headerlink" title="安装redis安装编译环境"></a>安装redis安装编译环境</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install gcc-c++</span><br></pre></td></tr></table></figure>
 <h4 id="下载上传redis源码安装包"><a href="#下载上传redis源码安装包" class="headerlink" title="下载上传redis源码安装包"></a>下载上传redis源码安装包</h4><ul>
 <li><p><a href="https://redis.io/" target="_blank" rel="noopener">redis官网链接</a></p>
 </li>
@@ -519,24 +518,15 @@
 </ul>
 <h4 id="解压文件"><a href="#解压文件" class="headerlink" title="解压文件"></a>解压文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf redis-4.0.2.tar.gz</span><br></pre></td></tr></table></figure>
 <h4 id="编译redis"><a href="#编译redis" class="headerlink" title="编译redis"></a>编译redis</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. cd 至解压完的redis目录下</span><br><span class="line">cd redis-4.0.2</span><br><span class="line">2. 进行编译</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
-<h4 id="安装redis4"><a href="#安装redis4" class="headerlink" title="安装redis4"></a>安装redis4</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PREFIX:安装redis到指定文件夹下</span><br><span class="line">make PREFIX=/usr/local/redis install</span><br></pre></td></tr></table></figure>
-<h4 id="复制redis目录下的redis-conf文件到上一级目录的bin目录下并修改相关配置"><a href="#复制redis目录下的redis-conf文件到上一级目录的bin目录下并修改相关配置" class="headerlink" title="复制redis目录下的redis.conf文件到上一级目录的bin目录下并修改相关配置"></a>复制redis目录下的redis.conf文件到上一级目录的bin目录下并修改相关配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 查看自己的服务器网卡地址</span><br><span class="line">ifconfig</span><br><span class="line">2. 修改bind的地址为上述查询网卡地址，注意这里不是设置你请求redis的IP地址，而是设置自己的服务器的网卡地址，同时不建议为了省事将bind地址设置为0.0.0.0，增加自己的服务器风险</span><br></pre></td></tr></table></figure>
-<p><img src="http://image.chengnanhuakai.com/image/blog/redis/%E7%BD%91%E5%8D%A1%E5%9C%B0%E5%9D%80.png" alt="ifconfig"></p>
-<p><img src="http://image.chengnanhuakai.com/image/blog/redis/redis%E5%A4%9A%E4%B8%AAip%E7%BB%91%E5%AE%9A.png" alt="绑定多个网卡地址"></p>
-<h4 id="启动redis服务"><a href="#启动redis服务" class="headerlink" title="启动redis服务"></a>启动redis服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">指定配置文件启动redis服务</span><br><span class="line">./redis-server redis.conf</span><br></pre></td></tr></table></figure>
-<h4 id="本地客户端连接测试"><a href="#本地客户端连接测试" class="headerlink" title="本地客户端连接测试"></a>本地客户端连接测试</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">如果没有提前设置过redis的密码，可以直接连接使用</span><br><span class="line">./redis-cli</span><br></pre></td></tr></table></figure>
-<p>设置了redis连接密码需要先进行密码验证才能使用客户端</p>
-<p><img src="http://image.chengnanhuakai.com/image/blog/redis/redis%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95.png" alt=""></p>
-<h4 id="远程redis可视化工具连接测试"><a href="#远程redis可视化工具连接测试" class="headerlink" title="远程redis可视化工具连接测试"></a>远程redis可视化工具连接测试</h4><ul>
-<li><a href="https://pan.baidu.com/s/1gZjsjC730zkadk4E3ma9cQ" target="_blank" rel="noopener">可视化工具redis-desktop-Manager网盘链接</a></li>
-</ul>
-<h4 id="注册redis为系统服务"><a href="#注册redis为系统服务" class="headerlink" title="注册redis为系统服务"></a>注册redis为系统服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">1.进入系统文件目录下</span><br><span class="line">cd /lib/systemd/system</span><br><span class="line">2. 创建redis的服务文件</span><br><span class="line">vim redis.service</span><br><span class="line">3. 复制以下内容到文件中</span><br><span class="line">[Unit]</span><br><span class="line">Description=redis service</span><br><span class="line">Wants=network.target</span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/usr/local/redis/bin/redis-server  /usr/local/redis/bin/redis.conf</span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line">4. 设置开机启动</span><br><span class="line">systemctl enable redis</span><br><span class="line">5. 启动查看redis</span><br><span class="line">systemctl start redis</span><br><span class="line">systemctl status redis</span><br><span class="line">systemctl stop redis</span><br></pre></td></tr></table></figure>
-<h4 id="待补充redis持久化相关配置"><a href="#待补充redis持久化相关配置" class="headerlink" title="待补充redis持久化相关配置"></a>待补充redis持久化相关配置</h4><p>参考博文：</p>
-<ul>
-<li><a href="https://www.cnblogs.com/jepson6669/p/9092634.html" target="_blank" rel="noopener">阿里云 CentOS7安装redis4.0.9并开启远程访问</a></li>
-</ul>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/11/03/2018-11-03-centos7安装配置redis4/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -686,7 +676,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">685</span>
+                <span title="本文字数">686</span>
               
 
               
@@ -721,25 +711,21 @@
 
       
         
-          
-            <h1 id="centos7安装配置jdk8"><a href="#centos7安装配置jdk8" class="headerlink" title="centos7安装配置jdk8"></a>centos7安装配置jdk8</h1><h4 id="1-下载JDK源码包"><a href="#1-下载JDK源码包" class="headerlink" title="1.下载JDK源码包"></a>1.下载JDK源码包</h4><ul>
+          <h1 id="centos7安装配置jdk8"><a href="#centos7安装配置jdk8" class="headerlink" title="centos7安装配置jdk8"></a>centos7安装配置jdk8</h1><h4 id="1-下载JDK源码包"><a href="#1-下载JDK源码包" class="headerlink" title="1.下载JDK源码包"></a>1.下载JDK源码包</h4><ul>
 <li><a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">官网链接</a></li>
 <li><a href="https://pan.baidu.com/s/1OnHY2cOS4hBNIdWvXJ22eA" target="_blank" rel="noopener">JDK8网盘链接</a></li>
 </ul>
 <h4 id="2-创建java目录"><a href="#2-创建java目录" class="headerlink" title="2. 创建java目录"></a>2. 创建java目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/</span><br><span class="line">mkdir java</span><br></pre></td></tr></table></figure>
 <p><img src="http://image.geekerit.com/image/blog/java/1.png-geekerit" alt="1"></p>
-<h4 id="3-上传文件到目录下并进行解压"><a href="#3-上传文件到目录下并进行解压" class="headerlink" title="3. 上传文件到目录下并进行解压"></a>3. 上传文件到目录下并进行解压</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 解压文件包</span><br><span class="line">tar -xzvf jdk-8u161-linux-x64.tar.gz -C /usr/local/java</span><br><span class="line">2. 定位至java文件夹下</span><br><span class="line">cd /usr/local/java</span><br><span class="line">3. 查看目录下的文件</span><br><span class="line">ll</span><br></pre></td></tr></table></figure>
-<p><img src="http://image.chengnanhuakai.com/image/blog/java/2.png-geekerit" alt=""></p>
-<h4 id="4-重命名文件夹并查看路径"><a href="#4-重命名文件夹并查看路径" class="headerlink" title="4. 重命名文件夹并查看路径"></a>4. 重命名文件夹并查看路径</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. 重命名为jdk8(便于之后环境配置，非必须)</span><br><span class="line">mv jdk1.8.0_161/ jdk8</span><br><span class="line">2. 再次查看目录下的文件</span><br><span class="line">ll</span><br><span class="line">3. 定位至jdk目录下</span><br><span class="line">cd jdk8</span><br><span class="line">4. 查看当前路径并复制输出结果</span><br><span class="line">pwd</span><br></pre></td></tr></table></figure>
-<p><img src="http://image.geekerit.com/image/blog/java/3.png-geekerit" alt=""></p>
-<p><img src="http://image.geekerit.com/image/blog/java/4.png-geekerit" alt=""></p>
-<h4 id="5-配置环境变量"><a href="#5-配置环境变量" class="headerlink" title="5.配置环境变量"></a>5.配置环境变量</h4><p><code>使用 vim /etc/profile 在文件最后追加以下java变量配置</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 将目录更换为自己的JDK安装目录(第二步最后的文件路径)</span><br><span class="line">export JAVA_HOME=/usr/local/java/jdk8	</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib</span><br><span class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</span><br></pre></td></tr></table></figure>
-<h4 id="6-刷新配置文件"><a href="#6-刷新配置文件" class="headerlink" title="6. 刷新配置文件"></a>6. 刷新配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
-<h4 id="7-查看java版本，验证安装是否成功"><a href="#7-查看java版本，验证安装是否成功" class="headerlink" title="7. 查看java版本，验证安装是否成功"></a>7. 查看java版本，验证安装是否成功</h4><p><code>使用java -version 进行查看</code></p>
-<p><img src="http://image.chengnanhuakai.com/image/blog/java/%E6%9F%A5%E7%9C%8Bjava%E7%89%88%E6%9C%AC.png-geekerit" alt="示例图片"></p>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/11/03/2018-11-03-centos7安装配置jdk8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -924,8 +910,7 @@
 
       
         
-          
-            <ol>
+          <ol>
 <li>下载zookeeper(3.4.13)</li>
 </ol>
 <ul>
@@ -940,70 +925,15 @@
 <li>cd 至zookeeper目录下创建data、logs目录</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd zookeeper-3.4.13</span><br><span class="line">mkdir data</span><br><span class="line">mkdir logs</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>创建cfg文件</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tickTime=2000</span><br><span class="line">dataDir=/usr/local/zookeeper/zookeeper-3.4.13/data</span><br><span class="line">dataLogDir=/usr/local/zookeeper/zookeeper-3.4.13/logs</span><br><span class="line">clientPort=2181</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>启动命令</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.切换至bin目录下</span><br><span class="line">2.使用./zkServer.sh进行相关操作</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>./zkServer.sh start</td>
-<td>启动</td>
-</tr>
-<tr>
-<td>./zkServer.sh stop</td>
-<td>停止</td>
-</tr>
-<tr>
-<td>./zkServer.sh restart</td>
-<td>重启</td>
-</tr>
-<tr>
-<td>./zkServer.sh status</td>
-<td>查看状态</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<ol start="6">
-<li>重命名并复制文件夹</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv zookeeper3.4.13 zookeeper1</span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>修改zoo.cfg文件</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dataDir=/usr/local/zookeeper/zookeeper1/data</span><br><span class="line">dataLogDir=/usr/local/zookeeper/zookeeper1/logs</span><br><span class="line">clientPort=2181</span><br><span class="line">initLimit=5</span><br><span class="line">syncLimit=2</span><br><span class="line">server.1=127.0.0.1:2888:3888</span><br><span class="line">server.2=127.0.0.1:4888:5888</span><br><span class="line">server.3=127.0.0.1:6888:7888</span><br></pre></td></tr></table></figure>
-<ol start="8">
-<li>创建myid文件</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd data/</span><br><span class="line">vim myid</span><br><span class="line">输入 1 (这里与server名保持一致)</span><br></pre></td></tr></table></figure>
-<ol start="9">
-<li>复制并修改相关配置文件</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp -r zookeeper1 zookeeper2</span><br><span class="line">cp -r zookeeper1 zookeeper3</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1. 生产主题 </span><br><span class="line"> ./kafka-console-producer.sh --broker-list localhost:9092 --topic test1</span><br><span class="line"> </span><br><span class="line"> 2. 订阅主题</span><br><span class="line"> ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test1</span><br><span class="line"> </span><br><span class="line"> 3. 启动kafka</span><br><span class="line"> ./kafka-server-start.sh ../config/server.properties</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">4. 查看已发布的主题</span><br><span class="line">./kafka-topics.sh --zookeeper localhost:2181 --list</span><br><span class="line"></span><br><span class="line">5. 查看主题描述</span><br><span class="line">./kafka-topics.sh --zookeeper localhost:2181 --describe --topic test1</span><br><span class="line"></span><br><span class="line">6. 发布主题</span><br><span class="line">./kafka-topics.sh --zookeeper localhost:2181 --create --topic test1 --partitions 3 --replication-factor 1</span><br></pre></td></tr></table></figure>
-<p>kafka启动故障</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.删除 /tmp/kafka-logs</span><br><span class="line">2.netstat -lnp|grep 9092</span><br><span class="line">3.重新启动</span><br></pre></td></tr></table></figure>
-<hr>
-<p><strong>待补充</strong><br>通过docker安装zookeeper与kafka并进行通信，提供服务</p>
-<p><img src="http://ww1.sinaimg.cn/mw690/81b78497jw1emfgwkasznj21hc0u0qb7.jpg" alt="life"></p>
-<p>参考：</p>
-<ul>
-<li><a href="https://blog.csdn.net/lisongjia123/article/details/78639242" target="_blank" rel="noopener">分布式Zookeeper安装搭建详解</a></li>
-<li><a href="https://www.cnblogs.com/lsdb/p/7297731.html" target="_blank" rel="noopener">zookeeper安装教程（zookeeper3.4.5为例）</a></li>
-</ul>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/11/01/2018-11-01-centos安装kafka/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
