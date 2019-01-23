@@ -302,7 +302,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">12</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">13</span></a>
 
   </li>
 
@@ -367,6 +367,284 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/23/2019-01-23-redis基础学习(二)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Aaryn">
+      <meta itemprop="description" content="Trust Commitment Care">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GeekerHub">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/23/2019-01-23-redis基础学习(二)/" class="post-title-link" itemprop="url">redis基础学习（二）</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-23 21:38:09" itemprop="dateCreated datePublished" datetime="2019-01-23T21:38:09+08:00">2019-01-23</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">3.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">3 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a>Set集合</h1><h2 id="SADD"><a href="#SADD" class="headerlink" title="SADD"></a>SADD</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SADD key member [member ...]</span><br></pre></td></tr></table></figure>
+<h4 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h4><ul>
+<li>key    集合的键名称</li>
+<li>member    要添加到集合中的成员</li>
+<li>[member …]    可以同时添加多个<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3>将一个或多个 <code>member</code> 元素加入到集合 <code>key</code> 当中，已经存在于集合的 <code>member</code> 元素将被忽略。<br>假如 <code>key</code> 不存在，则创建一个只包含 <code>member</code> 元素作成员的集合。<br>当 <code>key</code> 不是集合类型时，返回一个错误。<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3>O(N)， <code>N</code> 是被添加的元素的数量。<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3>被添加到集合中的新元素的数量，不包括被忽略的元素。<h3 id="示例图片"><a href="#示例图片" class="headerlink" title="示例图片"></a>示例图片</h3><img src="https://cdn.nlark.com/yuque/0/2019/png/248005/1548226307394-493b5d76-0d41-46a8-b399-1a179f01cbf6.png#align=left&amp;display=inline&amp;height=277&amp;linkTarget=_blank&amp;name=sadd.png&amp;originHeight=277&amp;originWidth=733&amp;size=17751&amp;width=733" alt="sadd.png"></li>
+</ul>
+<hr>
+<h2 id="SCARD"><a href="#SCARD" class="headerlink" title="SCARD"></a>SCARD</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SCARD key</span><br></pre></td></tr></table></figure>
+<h4 id="参数说明-1"><a href="#参数说明-1" class="headerlink" title="参数说明"></a>参数说明</h4><ul>
+<li>key     集合的键名称<h3 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h3>返回集合 <code>key</code> 的基数(集合中元素的数量)。<h3 id="时间复杂度-1"><a href="#时间复杂度-1" class="headerlink" title="时间复杂度"></a>时间复杂度</h3>O(1)<h3 id="返回值-1"><a href="#返回值-1" class="headerlink" title="返回值"></a>返回值</h3>集合的基数。<br>当 <code>key</code> 不存在时，返回 <code>0</code> 。<h3 id="示例图片-1"><a href="#示例图片-1" class="headerlink" title="示例图片"></a>示例图片</h3><img src="https://cdn.nlark.com/yuque/0/2019/png/248005/1548226461656-210462b6-9e41-46e0-a875-5f7c9818ac2f.png#align=left&amp;display=inline&amp;height=138&amp;linkTarget=_blank&amp;name=scard.png&amp;originHeight=151&amp;originWidth=816&amp;size=13507&amp;width=746" alt="scard.png"></li>
+</ul>
+<hr>
+<h2 id="SDIFF"><a href="#SDIFF" class="headerlink" title="SDIFF"></a>SDIFF</h2><h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SDIFF key [key ...]</span><br></pre></td></tr></table></figure>
+<h4 id="参数说明-2"><a href="#参数说明-2" class="headerlink" title="参数说明"></a>参数说明</h4><ul>
+<li>key    要进行比较的第一个集合</li>
+<li>[key …]    剩余需要与第一个集合进行比较的集合<h3 id="作用-2"><a href="#作用-2" class="headerlink" title="作用"></a>作用</h3>返回由第一个集和所有连续集之间的差异产生的集合的成员。<h3 id="时间复杂度-2"><a href="#时间复杂度-2" class="headerlink" title="时间复杂度"></a>时间复杂度</h3>O(N)， <code>N</code> 是所有给定集合的成员数量之和。<h3 id="返回值-2"><a href="#返回值-2" class="headerlink" title="返回值"></a>返回值</h3>一个包含差集成员的列表。<h3 id="示例图片-2"><a href="#示例图片-2" class="headerlink" title="示例图片"></a>示例图片</h3><img src="https://cdn.nlark.com/yuque/0/2019/png/248005/1548226758315-5e1daf91-a6af-4dca-b65e-98fbd9ad3e26.png#align=left&amp;display=inline&amp;height=421&amp;linkTarget=_blank&amp;name=sdiff.png&amp;originHeight=520&amp;originWidth=921&amp;size=37665&amp;width=746" alt="sdiff.png"></li>
+</ul>
+<hr>
+<h2 id="SDIFFSTORE"><a href="#SDIFFSTORE" class="headerlink" title="SDIFFSTORE"></a>SDIFFSTORE</h2><h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SDIFFSTORE destination key [key ...]</span><br></pre></td></tr></table></figure>
+<h4 id="参数说明-3"><a href="#参数说明-3" class="headerlink" title="参数说明"></a>参数说明</h4><ul>
+<li>destination    结果集要存储的集合名称</li>
+<li>key    要比较的第一个集合</li>
+<li>[key …]    要比较的剩余连续集合<h3 id="作用-3"><a href="#作用-3" class="headerlink" title="作用"></a>作用</h3>这个命令的作用和 <a href="http://redisdoc.com/set/sdiff.html#sdiff" target="_blank" rel="noopener">SDIFF</a> 类似，但它将结果保存到 <code>destination</code> 集合，而不是简单地返回结果集。<br>如果 <code>destination</code> 集合已经存在，则将其覆盖。<br><code>destination</code> 可以是 <code>key</code> 本身。<h3 id="时间复杂度-3"><a href="#时间复杂度-3" class="headerlink" title="时间复杂度"></a>时间复杂度</h3>O(N)， <code>N</code> 是所有给定集合的成员数量之和。<h3 id="返回值-3"><a href="#返回值-3" class="headerlink" title="返回值"></a>返回值</h3>结果集中的元素数量。<h3 id="示例图片-3"><a href="#示例图片-3" class="headerlink" title="示例图片"></a>示例图片</h3><img src="https://cdn.nlark.com/yuque/0/2019/png/248005/1548226860821-506e2038-b849-43ab-a2a4-362fc71d1b18.png#align=left&amp;display=inline&amp;height=97&amp;linkTarget=_blank&amp;name=sdiffstore.png&amp;originHeight=105&amp;originWidth=805&amp;size=8795&amp;width=746" alt="sdiffstore.png"></li>
+</ul>
+<hr>
+<h2 id="SINTER"><a href="#SINTER" class="headerlink" title="SINTER"></a>SINTER</h2><h3 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SINTER key [key ...]</span><br></pre></td></tr></table></figure>
+<h4 id="参数说明-4"><a href="#参数说明-4" class="headerlink" title="参数说明"></a>参数说明</h4><ul>
+<li>key    第一个要操作的集合</li>
+<li>[key …]    剩余的连续集合<h3 id="作用-4"><a href="#作用-4" class="headerlink" title="作用"></a>作用</h3>返回一个集合的全部成员，该集合是所有给定集合的交集。<br>不存在的 <code>key</code> 被视为空集。<br>当给定集合当中有一个空集时，结果也为空集(根据集合运算定律)。<h3 id="时间复杂度-4"><a href="#时间复杂度-4" class="headerlink" title="时间复杂度"></a>时间复杂度</h3>O(N * M)， <code>N</code> 为给定集合当中基数最小的集合， <code>M</code> 为给定集合的个数。<h3 id="返回值-4"><a href="#返回值-4" class="headerlink" title="返回值"></a>返回值</h3>交集成员的列表。<h3 id="示例图片-4"><a href="#示例图片-4" class="headerlink" title="示例图片"></a>示例图片</h3><img src="https://cdn.nlark.com/yuque/0/2019/png/248005/1548226960282-54c1f84e-8275-4023-936c-4a9bd85a18a1.png#align=left&amp;display=inline&amp;height=397&amp;linkTarget=_blank&amp;name=sinter.png&amp;originHeight=450&amp;originWidth=846&amp;size=33727&amp;width=746" alt="sinter.png"></li>
+</ul>
+<hr>
+<h2 id="SINTERSTORE"><a href="#SINTERSTORE" class="headerlink" title="SINTERSTORE"></a>SINTERSTORE</h2><h3 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SINTERSTORE destination key [key ...]</span><br></pre></td></tr></table></figure>
+<h4 id="参数说明-5"><a href="#参数说明-5" class="headerlink" title="参数说明"></a>参数说明</h4><ul>
+<li>destination    结果集保存的集合名称</li>
+<li>key    操作的第一个集合</li>
+<li>[key …]    剩余的连续集合<h3 id="作用-5"><a href="#作用-5" class="headerlink" title="作用"></a>作用</h3>这个命令类似于 <a href="http://redisdoc.com/set/sinter.html#sinter" target="_blank" rel="noopener">SINTER</a> 命令，但它将结果保存到 <code>destination</code> 集合，而不是简单地返回结果集。<br>如果 <code>destination</code> 集合已经存在，则将其覆盖。<br><code>destination</code> 可以是 <code>key</code> 本身。<h3 id="时间复杂度-5"><a href="#时间复杂度-5" class="headerlink" title="时间复杂度"></a>时间复杂度</h3>O(N * M)， <code>N</code> 为给定集合当中基数最小的集合， <code>M</code> 为给定集合的个数。<h3 id="返回值-5"><a href="#返回值-5" class="headerlink" title="返回值"></a>返回值</h3>结果集中的成员数量。<h3 id="示例图片-5"><a href="#示例图片-5" class="headerlink" title="示例图片"></a>示例图片</h3><img src="https://cdn.nlark.com/yuque/0/2019/png/248005/1548227077066-ec454b83-7c17-49c1-b849-ab854c7a4a85.png#align=left&amp;display=inline&amp;height=90&amp;linkTarget=_blank&amp;name=sinterstore.png&amp;originHeight=90&amp;originWidth=740&amp;size=8004&amp;width=740" alt="sinterstore.png"></li>
+</ul>
+<hr>
+<h1 id="SISMEMBER"><a href="#SISMEMBER" class="headerlink" title="SISMEMBER"></a>SISMEMBER</h1><h3 id="语法-6"><a href="#语法-6" class="headerlink" title="语法"></a>语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SISMEMBER key member</span><br></pre></td></tr></table></figure>
+<h4 id="参数说明-6"><a href="#参数说明-6" class="headerlink" title="参数说明"></a>参数说明</h4><ul>
+<li>key    集合的键名称</li>
+<li>member    要查询的成员<h3 id="作用-6"><a href="#作用-6" class="headerlink" title="作用"></a>作用</h3>判断 <code>member</code> 元素是否集合 <code>key</code> 的成员。<h3 id="时间复杂度-6"><a href="#时间复杂度-6" class="headerlink" title="时间复杂度"></a>时间复杂度</h3>O(1)<h3 id="返回值-6"><a href="#返回值-6" class="headerlink" title="返回值"></a>返回值</h3>如果 <code>member</code> 元素是集合的成员，返回 <code>1</code> 。<br>如果 <code>member</code> 元素不是集合的成员，或 <code>key</code> 不存在，返回 <code>0</code> 。<h3 id="示例图片-6"><a href="#示例图片-6" class="headerlink" title="示例图片"></a>示例图片</h3><img src="https://cdn.nlark.com/yuque/0/2019/png/248005/1548227703754-98d32404-3fcc-40b8-ad22-1a464a5a740c.png#align=left&amp;display=inline&amp;height=148&amp;linkTarget=_blank&amp;name=sismember.png&amp;originHeight=148&amp;originWidth=608&amp;size=11324&amp;width=608" alt="sismember.png"></li>
+</ul>
+<hr>
+<h1 id="SMEMBERS"><a href="#SMEMBERS" class="headerlink" title="SMEMBERS"></a>SMEMBERS</h1><h3 id="语法-7"><a href="#语法-7" class="headerlink" title="语法"></a>语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SMEMBERS key</span><br></pre></td></tr></table></figure>
+<h4 id="参数说明-7"><a href="#参数说明-7" class="headerlink" title="参数说明"></a>参数说明</h4><ul>
+<li>key    集合的键名称<h3 id="作用-7"><a href="#作用-7" class="headerlink" title="作用"></a>作用</h3>返回集合 <code>key</code> 中的所有成员。<br>不存在的 <code>key</code> 被视为空集合。<h3 id="时间复杂度-7"><a href="#时间复杂度-7" class="headerlink" title="时间复杂度"></a>时间复杂度</h3>O(N)， <code>N</code> 为集合的基数。<h3 id="返回值-7"><a href="#返回值-7" class="headerlink" title="返回值"></a>返回值</h3>集合中的所有成员。<h3 id="示例图片-7"><a href="#示例图片-7" class="headerlink" title="示例图片"></a>示例图片</h3><img src="https://cdn.nlark.com/yuque/0/2019/png/248005/1548228022188-bc767c3e-2a3a-41f0-8f74-8f304ac52981.png#align=left&amp;display=inline&amp;height=148&amp;linkTarget=_blank&amp;name=smembers.png&amp;originHeight=148&amp;originWidth=697&amp;size=13778&amp;width=697" alt="smembers.png"></li>
+</ul>
+<hr>
+<h1 id="SMOVE"><a href="#SMOVE" class="headerlink" title="SMOVE"></a>SMOVE</h1><h3 id="语法-8"><a href="#语法-8" class="headerlink" title="语法"></a>语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SMOVE <span class="built_in">source</span> destination member</span><br></pre></td></tr></table></figure>
+<h4 id="参数说明-8"><a href="#参数说明-8" class="headerlink" title="参数说明"></a>参数说明</h4><ul>
+<li>source    元素所在的集合</li>
+<li>destination    元素要移动到的目标集合</li>
+<li>member    要移动的集合元素<h3 id="作用-8"><a href="#作用-8" class="headerlink" title="作用"></a>作用</h3>将 <code>member</code> 元素从 <code>source</code> 集合移动到 <code>destination</code> 集合。<br><a href="http://redisdoc.com/set/smove.html#smove" target="_blank" rel="noopener">SMOVE</a> 是原子性操作。<br>如果 <code>source</code> 集合不存在或不包含指定的 <code>member</code> 元素，则 <a href="http://redisdoc.com/set/smove.html#smove" target="_blank" rel="noopener">SMOVE</a> 命令不执行任何操作，仅返回 <code>0</code> 。否则， <code>member</code> 元素从 <code>source</code> 集合中被移除，并添加到 <code>destination</code> 集合中去。<br>当 <code>destination</code> 集合已经包含 <code>member</code> 元素时， <a href="http://redisdoc.com/set/smove.html#smove" target="_blank" rel="noopener">SMOVE</a> 命令只是简单地将 <code>source</code> 集合中的 <code>member</code> 元素删除。<br>当 <code>source</code> 或 <code>destination</code> 不是集合类型时，返回一个错误。<h3 id="时间复杂度-8"><a href="#时间复杂度-8" class="headerlink" title="时间复杂度"></a>时间复杂度</h3>O(1)<h3 id="返回值-8"><a href="#返回值-8" class="headerlink" title="返回值"></a>返回值</h3>如果 <code>member</code> 元素被成功移除，返回 <code>1</code> 。<br>如果 <code>member</code> 元素不是 <code>source</code> 集合的成员，并且没有任何操作对 <code>destination</code> 集合执行，那么返回 <code>0</code> 。<h3 id="示例图片-8"><a href="#示例图片-8" class="headerlink" title="示例图片"></a>示例图片</h3><img src="https://cdn.nlark.com/yuque/0/2019/png/248005/1548228235926-5dd9be28-aa30-4f17-ab30-e163c2fcd903.png#align=left&amp;display=inline&amp;height=470&amp;linkTarget=_blank&amp;name=smove.png&amp;originHeight=509&amp;originWidth=808&amp;size=43707&amp;width=746" alt="smove.png"></li>
+</ul>
+<hr>
+<h1 id="SPOP"><a href="#SPOP" class="headerlink" title="SPOP"></a>SPOP</h1><h3 id="语法-9"><a href="#语法-9" class="headerlink" title="语法"></a>语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SPOP key</span><br></pre></td></tr></table></figure>
+<h4 id="参数说明-9"><a href="#参数说明-9" class="headerlink" title="参数说明"></a>参数说明</h4><ul>
+<li>key    操作的集合的键名称<h3 id="作用-9"><a href="#作用-9" class="headerlink" title="作用"></a>作用</h3>移除并返回集合中的一个随机元素。<br>如果只想获取一个随机元素，但不想该元素从集合中被移除的话，可以使用 <a href="http://redisdoc.com/set/srandmember.html#srandmember" target="_blank" rel="noopener">SRANDMEMBER</a> 命令。<h3 id="时间复杂度-9"><a href="#时间复杂度-9" class="headerlink" title="时间复杂度"></a>时间复杂度</h3>O(1)<h3 id="返回值-9"><a href="#返回值-9" class="headerlink" title="返回值"></a>返回值</h3>被移除的随机元素。<br>当 <code>key</code> 不存在或 <code>key</code> 是空集时，返回 <code>nil</code> 。<h3 id="示例图片-9"><a href="#示例图片-9" class="headerlink" title="示例图片"></a>示例图片</h3><img src="https://cdn.nlark.com/yuque/0/2019/png/248005/1548250094094-099596fa-8f5e-43e2-a6e8-bbfc45551150.png#align=left&amp;display=inline&amp;height=147&amp;linkTarget=_blank&amp;name=spop.png&amp;originHeight=147&amp;originWidth=589&amp;size=8714&amp;width=589" alt="spop.png"></li>
+</ul>
+<hr>
+<h1 id="SRANDMEMBER"><a href="#SRANDMEMBER" class="headerlink" title="SRANDMEMBER"></a>SRANDMEMBER</h1><h3 id="语法-10"><a href="#语法-10" class="headerlink" title="语法"></a>语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SRANDMEMBER key [count]</span><br></pre></td></tr></table></figure>
+<h4 id="参数说明-10"><a href="#参数说明-10" class="headerlink" title="参数说明"></a>参数说明</h4><ul>
+<li>key    集合的键名称</li>
+<li>[count]    要返回的键数量<h3 id="作用-10"><a href="#作用-10" class="headerlink" title="作用"></a>作用</h3>如果命令执行时，只提供了 <code>key</code> 参数，那么返回集合中的一个随机元素。<br>从 Redis 2.6 版本开始， <a href="http://redisdoc.com/set/srandmember.html#srandmember" target="_blank" rel="noopener">SRANDMEMBER</a> 命令接受可选的 <code>count</code> 参数：</li>
+<li>如果 <code>count</code> 为正数，且小于集合基数，那么命令返回一个包含 <code>count</code> 个元素的数组，数组中的元素<strong>各不相同</strong>。如果 <code>count</code> 大于等于集合基数，那么返回整个集合。</li>
+<li>如果 <code>count</code> 为负数，那么命令返回一个数组，数组中的元素<strong>可能会重复出现多次</strong>，而数组的长度为 <code>count</code> 的绝对值。</li>
+</ul>
+<p>该操作和 <a href="http://redisdoc.com/set/spop.html#spop" target="_blank" rel="noopener">SPOP</a> 相似，但 <a href="http://redisdoc.com/set/spop.html#spop" target="_blank" rel="noopener">SPOP</a> 将随机元素从集合中移除并返回，而 <a href="http://redisdoc.com/set/srandmember.html#srandmember" target="_blank" rel="noopener">SRANDMEMBER</a> 则仅仅返回随机元素，而不对集合进行任何改动。</p>
+<h3 id="时间复杂度-10"><a href="#时间复杂度-10" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>只提供 <code>key</code> 参数时为 O(1) 。<br>如果提供了 <code>count</code> 参数，那么为 O(N) ，N 为返回数组的元素个数。</p>
+<h3 id="返回值-10"><a href="#返回值-10" class="headerlink" title="返回值"></a>返回值</h3><p>只提供 <code>key</code> 参数时，返回一个元素；如果集合为空，返回 <code>nil</code> 。<br>如果提供了 <code>count</code> 参数，那么返回一个数组；如果集合为空，返回空数组。</p>
+<h3 id="示例图片-10"><a href="#示例图片-10" class="headerlink" title="示例图片"></a>示例图片</h3><h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://cdn.nlark.com/yuque/0/2019/png/248005/1548228508172-fa063103-fb85-4218-9cb0-b8b93adef12d.png#align=left&amp;display=inline&amp;height=392&amp;linkTarget=_blank&amp;name=srandmember.png&amp;originHeight=421&amp;originWidth=802&amp;size=31982&amp;width=746" alt="srandmember.png"></h2><h1 id="SREM"><a href="#SREM" class="headerlink" title="SREM"></a>SREM</h1><h3 id="语法-11"><a href="#语法-11" class="headerlink" title="语法"></a>语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SREM key member [member ...]</span><br></pre></td></tr></table></figure>
+<h4 id="参数说明-11"><a href="#参数说明-11" class="headerlink" title="参数说明"></a>参数说明</h4><ul>
+<li>key    集合的键名称</li>
+<li>member    要删除的集合成员</li>
+<li>[member …]    可同时删除多个<h3 id="作用-11"><a href="#作用-11" class="headerlink" title="作用"></a>作用</h3>移除集合 <code>key</code> 中的一个或多个 <code>member</code> 元素，不存在的 <code>member</code> 元素会被忽略。<br>当 <code>key</code> 不是集合类型，返回一个错误。<h3 id="时间复杂度-11"><a href="#时间复杂度-11" class="headerlink" title="时间复杂度"></a>时间复杂度</h3>O(N)， <code>N</code> 为给定 <code>member</code> 元素的数量。<h3 id="返回值-11"><a href="#返回值-11" class="headerlink" title="返回值"></a>返回值</h3>被成功移除的元素的数量，不包括被忽略的元素。<h3 id="示例图片-11"><a href="#示例图片-11" class="headerlink" title="示例图片"></a>示例图片</h3><img src="https://cdn.nlark.com/yuque/0/2019/png/248005/1548228606623-3cae9cf7-3dee-4967-a9af-49c96d2f93b7.png#align=left&amp;display=inline&amp;height=208&amp;linkTarget=_blank&amp;name=srem.png&amp;originHeight=208&amp;originWidth=560&amp;size=15054&amp;width=560" alt="srem.png"></li>
+</ul>
+<hr>
+<h1 id="SUNION"><a href="#SUNION" class="headerlink" title="SUNION"></a>SUNION</h1><h3 id="语法-12"><a href="#语法-12" class="headerlink" title="语法"></a>语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SUNION key [key ...]</span><br></pre></td></tr></table></figure>
+<h4 id="参数说明-12"><a href="#参数说明-12" class="headerlink" title="参数说明"></a>参数说明</h4><ul>
+<li>key    要操作的第一个集合</li>
+<li>[key …]    剩余的连续集合<h3 id="作用-12"><a href="#作用-12" class="headerlink" title="作用"></a>作用</h3>返回一个集合的全部成员，该集合是所有给定集合的并集。<br>不存在的 <code>key</code> 被视为空集。<h3 id="时间复杂度-12"><a href="#时间复杂度-12" class="headerlink" title="时间复杂度"></a>时间复杂度</h3>O(N)， <code>N</code> 是所有给定集合的成员数量之和。<h3 id="返回值-12"><a href="#返回值-12" class="headerlink" title="返回值"></a>返回值</h3>并集成员的列表。<h3 id="示例图片-12"><a href="#示例图片-12" class="headerlink" title="示例图片"></a>示例图片</h3><img src="https://cdn.nlark.com/yuque/0/2019/png/248005/1548228690972-1f1ef6bf-1bc6-40a1-b9b1-3cbbc30e152a.png#align=left&amp;display=inline&amp;height=267&amp;linkTarget=_blank&amp;name=sunion.png&amp;originHeight=272&amp;originWidth=760&amp;size=20694&amp;width=746" alt="sunion.png"></li>
+</ul>
+<hr>
+<h1 id="SUNIONSTORE"><a href="#SUNIONSTORE" class="headerlink" title="SUNIONSTORE"></a>SUNIONSTORE</h1><h3 id="语法-13"><a href="#语法-13" class="headerlink" title="语法"></a>语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SUNIONSTORE destination key [key ...]</span><br></pre></td></tr></table></figure>
+<h4 id="参数说明-13"><a href="#参数说明-13" class="headerlink" title="参数说明"></a>参数说明</h4><ul>
+<li>destination    结果集保存的目标集合</li>
+<li>key    要操作的第一个集合</li>
+<li>[key …]    剩余的连续集合<h3 id="作用-13"><a href="#作用-13" class="headerlink" title="作用"></a>作用</h3>这个命令类似于 <a href="http://redisdoc.com/set/sunion.html#sunion" target="_blank" rel="noopener">SUNION</a> 命令，但它将结果保存到 <code>destination</code> 集合，而不是简单地返回结果集。<br>如果 <code>destination</code> 已经存在，则将其覆盖。<br><code>destination</code> 可以是 <code>key</code> 本身。<h3 id="时间复杂度-13"><a href="#时间复杂度-13" class="headerlink" title="时间复杂度"></a>时间复杂度</h3>O(N)， <code>N</code> 是所有给定集合的成员数量之和。<h3 id="返回值-13"><a href="#返回值-13" class="headerlink" title="返回值"></a>返回值</h3>结果集中的元素数量。<h3 id="示例图片-13"><a href="#示例图片-13" class="headerlink" title="示例图片"></a>示例图片</h3><img src="https://cdn.nlark.com/yuque/0/2019/png/248005/1548228773366-f47ec759-9f3f-4921-9e2a-5b386153654e.png#align=left&amp;display=inline&amp;height=115&amp;linkTarget=_blank&amp;name=sunionstore.png&amp;originHeight=115&amp;originWidth=719&amp;size=7762&amp;width=719" alt="sunionstore.png"></li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1759,201 +2037,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/06/2018-11-06-将java项目加入系统服务/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Aaryn">
-      <meta itemprop="description" content="Trust Commitment Care">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GeekerHub">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/11/06/2018-11-06-将java项目加入系统服务/" class="post-title-link" itemprop="url">将java项目加入系统服务</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-06 22:18:09" itemprop="dateCreated datePublished" datetime="2018-11-06T22:18:09+08:00">2018-11-06</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">513</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="将java项目加入系统服务"><a href="#将java项目加入系统服务" class="headerlink" title="将java项目加入系统服务"></a>将java项目加入系统服务</h2><h4 id="到-usr-lib-systemd-system文件夹下编辑服务脚本"><a href="#到-usr-lib-systemd-system文件夹下编辑服务脚本" class="headerlink" title="到/usr/lib/systemd/system文件夹下编辑服务脚本"></a>到/usr/lib/systemd/system文件夹下编辑服务脚本</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/lib/systemd/system</span><br></pre></td></tr></table></figure>
-<h4 id="脚本内容如下"><a href="#脚本内容如下" class="headerlink" title="脚本内容如下"></a>脚本内容如下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=test_api service</span><br><span class="line">Wants=network.target</span><br><span class="line">[Service]</span><br><span class="line">User=nobody</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/bin/sh -c &apos;nohup /usr/local/java/jdk8/bin/java -jar /home/app/member/fordearme-member-system-0.0.1-SNAPSHOT.jar &amp;&apos;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/11/06/2018-11-06-将java项目加入系统服务/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2005,7 +2088,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2167,7 +2250,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">22k</span>
+    <span title="站点总字数">25k</span>
   
 
   
@@ -2176,7 +2259,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">20 分钟</span>
+    <span title="站点阅读时长">23 分钟</span>
   
 </div>
 
